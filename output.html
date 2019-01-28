@@ -3,8 +3,9 @@
 <header>
   <title>Personal Builds Website Generator</title>
 
-  <link rel="stylesheet" src="css/reset.css" type="text/css" />
-  <link rel="stylesheet" src="css/output.css" type="text/css" />
+  <link rel="stylesheet" href="css/reset.css" type="text/css" />
+  <link rel="stylesheet" href="css/homepage-style.css" type="text/css" />
+  <link rel="stylesheet" href="css/output.css" type="text/css" />
 
 </header>
 
@@ -14,19 +15,28 @@
       <!-- Logo -->
       <!-- <img> -->
       <nav>
-        <a href="#">Home</a>
+        <!-- # is to not swap pages -->
+        <a href="index.html">Home</a>
         <a href="build.html">Build Your Website</a>
         <a href="preview.html">Preview Your Page</a>
-        <a href="output.html">Get the Code</a>
+        <a href="#">Get the Code</a>
+        <a href="about-us.html">Developers</a>
       </nav>
       <h1>Get the Code!</h1>
     </header>
     <main>
-      <p>HTML Output</p>
-      <p>CSS Output</p>
-    </main>
+        <section>
+          <p>HTML Output</p>
+          <p id="HTML"></p>
+        </section>
+        <section>
+          <p>CSS Output</p>
+          <p id="CSS"></p>
+        </section>
+      </main>
     <footer>
       <p>Copyright info?</p>
     </footer>
   </body>
+  <script src="js/output.js"></script>
 </html>

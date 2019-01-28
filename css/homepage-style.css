@@ -1,0 +1,65 @@
+header{
+    margin:auto;
+    width: 960px;
+background-color: #5EAFA8;
+font-size: 25px;
+font-family: Stencil std, fantasy;
+
+}
+header h1{
+    text-align: center;
+}
+nav a {
+    text-decoration: none;
+    margin-left: 25px;
+    margin-right: 22px;
+    color: #2A5175;
+}
+body{
+    margin:auto;
+    width: 960px;
+    background-color:rgb(73, 73, 73);
+}
+main h2{
+    padding: 20px;
+    background-color: #8A2530;
+    margin:auto;
+    width: 850px;
+    border-radius: 20px;
+}
+body main {
+    border: 20px inset  #2A5175;
+    background-color: #F7EECD;
+    font-size: 24px;
+}
+
+body main p{
+    margin:auto;
+    width: 720px;
+    text-indent: 16px;
+    font-family: Comic Sans MS, cursive, sans-serif;
+}
+main ol li{
+    font-weight: bold;
+
+}
+button a{
+    text-decoration: none;
+}
+ button{
+     margin-left: 770px;
+    border:none;
+    padding: 10px 40px;
+    background:black;
+    color: white;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 350ms;
+    cursor: pointer;
+}
+
+button:hover{
+    border : 1px solid black;
+    background: white;
+    color:black;
+} 
