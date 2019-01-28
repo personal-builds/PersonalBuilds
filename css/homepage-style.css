@@ -1,6 +1,30 @@
 header{
-background-color: red;
+    margin:auto;
+    width: 960px;
+background-color: grey;
 }
 body{
-    background-color:red;
+    margin:auto;
+    width: 960px;
+    background-color:rgb(73, 73, 73);
+}
+main h2{
+    background-color: rgb(134, 134, 134);
+    margin:auto;
+    width: 850px;
+}
+body main {
+    border: 20px inset #666;
+    background-color:white;
+    font-size: 18px;
+}
+body main button{
+    margin-left:800px;
+    width: 120px;
+    height: 25px;
+}
+body main p{
+    margin:auto;
+    width: 720px;
+    text-indent: 16px;
 }
