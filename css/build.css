@@ -1,0 +1,50 @@
+body{
+    background: gray;
+}
+header nav a{
+    margin-left: 210px;
+}
+button{
+    border: 5px solid #8a2530;
+    padding: 10px, 40px;
+    background: white;
+    color: #2a5175;
+    border-radius: 30px;
+    font-size: 20px;
+    transition: 350ms;
+    cursor: pointer;
+}
+button:hover{
+    border: 5px solid #2a5175;
+    background: #f7eecd;
+    color: #8a2530;
+    font-weight: bold;
+}
+legend {
+    font-size: 30px;
+    color: white;
+}
+fieldset{
+    width: 1480px;
+    border: 5px solid #5EAFA8;
+}
+form fieldset {
+    color: white;
+    width: 600px;
+    margin: auto;
+    display: flex;
+    background: #8a2530;
+}
+form select {
+    background-color: #f7eecd;
+}
+#article{
+    width: 960px;
+    height: 159px;
+    color: black;
+    font-size: 18px;
+    background-color: #f7eecd;
+}
+
+
+
