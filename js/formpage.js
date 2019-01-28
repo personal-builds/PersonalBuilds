@@ -10,7 +10,7 @@ var articleText = document.getElementById('article');
 
 function Element(type, options) {
   this.type = type;
-  this.options = pptions;
+  this.options = options;
   Element.list.push(this);
 }
 
@@ -45,4 +45,4 @@ function submitHandler(event) {
   Element.store();
 }
 
-document.getElementsByTagName('form').addEventListener(submit, submitHandler);
+document.getElementsByTagName('form')[0].addEventListener("submit", submitHandler);
