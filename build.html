@@ -41,25 +41,11 @@
         <fieldset>
           <legend>Website Input</legend>
           <label for="title">Title</label>
-          <select id="title">
-            <option value="">Please choose an</option>
-            <option value="img/feet-face-599c412c22fa3a0011d92add.jpg">feetface</option>
-            <option value="img/pic9 070922.jpg">Dog</option>
-            <option value= "img/stock-photo-funny-man-with-watermelon-helmet-and-googles-looks-like-a-parasitic-caterpillar-157354478.jpg">Watermelon Helmet</option>
-            <option value="img/wBpvkA0.jpg">Watermelon</option>
-            <option value="img/Weird+stock+images_2c7df9_6006554.jpg">Weird Stock image</option>
-          </select>
-          <label for="header">Header Text</label>
-          <select id="header">
-              <option value="">Please choose an</option>
-              <option value="img/feet-face-599c412c22fa3a0011d92add.jpg">feetface</option>
-              <option value="img/pic9 070922.jpg">Dog</option>
-              <option value= "img/stock-photo-funny-man-with-watermelon-helmet-and-googles-looks-like-a-parasitic-caterpillar-157354478.jpg">Watermelon Helmet</option>
-              <option value="img/wBpvkA0.jpg">Watermelon</option>
-              <option value="img/Weird+stock+images_2c7df9_6006554.jpg">Weird Stock image</option>
-            </select>
+          <input name="title" type="text" required id="title">
 
-          <label for="image-one">Main Image</label>
+          <label for="header">Header Text</label>
+          <input name="header" type="text" required id="header">
+
           <select id="img1">
               <option value="">Please choose an</option>
               <option value="img/feet-face-599c412c22fa3a0011d92add.jpg">feetface</option>
@@ -111,11 +97,15 @@
 
           <label for="article=text">Article Text</label>
           <input name="article-text" type="text" id="article">
+
+          <button type="submit">Save</buttom>
         </fieldset>
       </form>
     </main>
+
     <footer>
       <p>Copyright info?</p>
     </footer>
+    <script src="js/formpage.js"></script>
   </body>
 </html>
