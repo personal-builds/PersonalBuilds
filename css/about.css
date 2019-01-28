@@ -1,0 +1,9 @@
+*img{
+    width: 300px;
+}
+header{
+    background-color: red;
+}
+#tannersPic{
+    image-orientation: 90deg;
+}
