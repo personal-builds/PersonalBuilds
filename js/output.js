@@ -26,6 +26,8 @@ function buildHTML() {
     }
   }
   buildEnd();
+
+  document.getElementById('HTML').innerText = `${html}`;
 }
 
 
@@ -88,3 +90,5 @@ function buildEnd() {
     </body>
   </html>`
 }
+
+buildHTML();
