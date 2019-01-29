@@ -4,19 +4,21 @@ body{
     margin: auto;
 }
 header{
+    
     border: 20px solid black;
     border-radius: 20px;
     margin:auto;
     width:960px;
-    padding:20px;
     background: linear-gradient(to right, red,  orange, indigo, violet);
+    margin-top: 40px;
+    margin-bottom: 40px;
     
 }
 nav a {
     text-decoration: none;
     margin-left: 6%;
     margin-right: 3%;
-    color:white;
+    color:black;
     transition: 350ms;
     font-size: 29px;
     font-family: Stencil std, fantasy;
@@ -46,12 +48,12 @@ form fieldset {
     color: white;
     width: 300px;
     margin: auto;
-    display: flex;
+    display:flex;
     background: linear-gradient(to right, rgb(5, 5, 190), rgb(139, 17, 139));
     font-size: 25px;
-    display: inline-block;
+    display:inline-block;
     border: 20px solid black;
-    float: left;
+    float:left;
     height: 280px;
     border-radius: 20px;
 }
@@ -87,4 +89,11 @@ iframe{
 }
 textarea {
     resize: none;
+}
+body header nav h1{
+    font-size: 80px;
+    margin:auto;
+    color:white;
+    margin-left : 15%;
+    font-family: Stencil std, fantasy;
 }
