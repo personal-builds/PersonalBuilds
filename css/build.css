@@ -54,7 +54,7 @@ form fieldset {
     display:inline-block;
     border: 20px solid black;
     float:left;
-    height: 280px;
+    height: 320px;
     border-radius: 20px;
 }
 .titleAndHeader{
@@ -78,9 +78,10 @@ form label{
     padding:10px;
 }
 table{
+    margin-top: 20px;
     width: 500px;
     height: 400px;
-    border: 20px solid black;
+    border: 10px solid black;
     display: inline-block;
     border-radius: 20px;
 }
