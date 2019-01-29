@@ -100,7 +100,7 @@ function renderTextElement(options){
   text.className= 'text'
   text.textContent = options[0];
 
-  htmlbody.appendChild(text);
+  htmlBody.appendChild(text);
   
 }
 

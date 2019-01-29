@@ -84,6 +84,8 @@ table{
     border: 10px solid black;
     display: inline-block;
     border-radius: 20px;
+    overflow-y: scroll;
+
 }
 iframe{
     width: 960px;
@@ -97,4 +99,10 @@ body header nav h1{
     color:white;
     margin-left : 15%;
     font-family: Stencil std, fantasy;
+}
+td{
+    border: 1px solid black;
+}
+tr td:nth-of-type(1){
+    width: 60px;
 }
