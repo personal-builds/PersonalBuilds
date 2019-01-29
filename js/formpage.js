@@ -10,6 +10,9 @@ var optionOne = document.getElementById('option-one');
 var optionTwo = document.getElementById('option-two');
 var optionThree = document.getElementById('option-three');
 var table= document.getElementsByTagName('table')[0];
+var optionOneDiv = document.getElementById('option-one-div');
+var optionTwoDiv = document.getElementById('option-two-div');
+var optionThreeDiv = document.getElementById('option-three-div');
 
 if(localStorage.getItem('website')){
 Element.list= JSON.parse(localStorage.getItem('website'))
@@ -77,6 +80,7 @@ function submitHandler(event) {
   // new Element('article-right', [imageFive.value, articleText.value])
 
   Element.store();
+  displayList();
 }
 
 document.getElementsByTagName('form')[0].addEventListener("submit", submitHandler);
@@ -84,50 +88,50 @@ document.getElementsByTagName('form')[0].addEventListener("submit", submitHandle
 function elementSelect(event){
   switch(event.target.value){
     case "img-one": 
-      optionOne.style.visibility = "visible"
-      optionTwo.style.visibility = "hidden"
-      optionThree.style.visibility = "hidden"
+      optionOneDiv.style.visibility = "visible"
+      optionTwoDiv.style.visibility = "hidden"
+      optionThreeDiv.style.visibility = "hidden"
       optionOne.type= 'url'
       break
     case "img-two":
-     optionOne.style.visibility = "visible"
-     optionTwo.style.visibility = "visible"
-     optionThree.style.visibility = "hidden"
+     optionOneDiv.style.visibility = "visible"
+     optionTwoDiv.style.visibility = "visible"
+     optionThreeDiv.style.visibility = "hidden"
      optionTwo.type='url'
      optionOne.type='url'
      break
     case "img-three":
-     optionOne.style.visibility = "visible"
-     optionTwo.style.visibility = "visible"
-     optionThree.style.visibility = "visible"
+     optionOneDiv.style.visibility = "visible"
+     optionTwoDiv.style.visibility = "visible"
+     optionThreeDiv.style.visibility = "visible"
      optionOne.type='url'
      optionTwo.type='url'
      optionThree.type='url'
      break
     case "text":
-    optionOne.style.visibility = "visible"
-    optionTwo.style.visibility = "hidden"
-    optionThree.style.visibility = "hidden"
+    optionOneDiv.style.visibility = "visible"
+    optionTwoDiv.style.visibility = "hidden"
+    optionThreeDiv.style.visibility = "hidden"
     optionOne.type='text'
      break
     case "article-right":
-    optionOne.style.visibility = "visible"
-    optionTwo.style.visibility = "visible"
-    optionThree.style.visibility = "hidden"
+    optionOneDiv.style.visibility = "visible"
+    optionTwoDiv.style.visibility = "visible"
+    optionThreeDiv.style.visibility = "hidden"
     optionOne.type='url'
     optionTwo.type='text'
      break
     case "article-left":
-     optionOne.style.visibility = "visible"
-     optionTwo.style.visibility = "visible"
-     optionThree.style.visibility = "hidden"
+     optionOneDiv.style.visibility = "visible"
+     optionTwoDiv.style.visibility = "visible"
+     optionThreeDiv.style.visibility = "hidden"
      optionOne.type='text'
      optionTwo.type='url'
      break
     case '':
-     optionOne.style.visibility = "hidden"
-     optionTwo.style.visibility = "hidden"
-     optionThree.style.visibility = "hidden"
+     optionOneDiv.style.visibility = "hidden"
+     optionTwoDiv.style.visibility = "hidden"
+     optionThreeDiv.style.visibility = "hidden"
      break
   }
 }
@@ -140,8 +144,58 @@ table.innerHTML='';
   for(var i=0; i< Element.list.length; i++){
     var firstRow = document.createElement('tr');
     var tdEl = document.createElement('td');
+    var upButton = document.createElement('button');
+    upButton.className= 'upButton'
+    upButton.textContent = '\u25B2'
+    upButton.id= `upButton ${i}`
+    tdEl.appendChild(upButton)
+    firstRow.appendChild(tdEl);
+    tdEl= document.createElement('td')
+    tdEl.textContent=Element.list[i].type
+    tdEl.rowSpan='3'
+    firstRow.appendChild(tdEl);
+    tdEl= document.createElement('td')
+    tdEl.textContent=Element.list[i].options[0];
+    firstRow.appendChild(tdEl);
+    table.appendChild(firstRow);
+
+    var twoRow = document.createElement('tr')
+    var tdEl = document.createElement('td');
+    var xButton = document.createElement('button');
+    xButton.className='xButton'
+    xButton.textContent= 'X'
+    xButton.id=`xButton${i}`
+    tdEl.appendChild(xButton)
+    twoRow.appendChild(tdEl);
+    tdEl = document.createElement('td')
+    if (Element.list[i].options[1]){
+      tdEl.textContent=Element.list[i].options[1];
+    }
+    twoRow.appendChild(tdEl);
+    table.appendChild(twoRow);
+  
+
+    var thirdRow = document.createElement('tr')
+    var tdEl =document.createElement('td');
+    var downButton = document.createElement('button');
+    downButton.className = 'downButton'
+    downButton.textContent= '\u25BC'
+    downButton.id=`downButton${i}`
+    tdEl.appendChild(downButton)
+    thirdRow.appendChild(tdEl);
+    tdEl = document.createElement('td');
+    if(Element.list[i].options[2]){
+      tdEl.textContent=Element.list[i].options[2];
+    }
+    thirdRow.appendChild(tdEl);
+    table.appendChild(thirdRow);
+
+    
     
   }
     
     
 }
+displayList();
+optionTwoDiv.style.visibility = "hidden"
+optionThreeDiv.style.visibility = "hidden"
