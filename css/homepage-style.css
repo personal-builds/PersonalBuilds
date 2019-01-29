@@ -17,9 +17,10 @@ header h1{
     color:rgb(231, 231, 231);
 }
 nav a {
+    
     text-decoration: none;
-    margin-left: 25px;
-    margin-right: 22px;
+    margin-left: 7%;
+    margin-right: 4%;
     color: black;
     transition: 350ms;
     
@@ -44,7 +45,7 @@ body main {
     border-radius: 20px;
     background-color: #F7EECD;
     font-size: 24px;
-    background: linear-gradient(to right, rgb(5, 5, 190), purple);
+    background: linear-gradient(to right, rgb(5, 5, 190), rgb(139, 17, 139));
     color:rgb(192, 176, 176);
 }
 
@@ -66,9 +67,11 @@ button a{
     text-decoration: none;
 }
 button{
-    border: 5px solid #8a2530;
+    height: 60px;
+    width:120px;
+    border: 5px solid Black;
     padding: 10px, 40px;
-    background: white;
+    background: linear-gradient(to bottom right, lime, rgb(46, 155, 189));
     color: #2a5175;
     border-radius: 30px;
     font-size: 20px;
@@ -77,8 +80,8 @@ button{
     margin-left:820px;
 }
 button:hover{
-    border: 5px solid #2a5175;
-    background: #f7eecd;
+    border: 10px solid white;
+    background: linear-gradient(to bottom left, lime, rgb(46, 155, 189));
     color: #8a2530;
     font-weight: bold;
 }
