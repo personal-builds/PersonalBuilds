@@ -12,6 +12,7 @@ body header{
 #tannersPic{
     transform: rotate(90deg);
     width: 350px;
+    margin-bottom: 40px;
 }
 header{
     border-radius: 20px;
@@ -86,3 +87,10 @@ body header h1{
     background: -webkit-linear-gradient( rgba(0, 0, 0, 0.767), rgba(238, 130, 238, 0.658), rgba(0, 0, 255, 0.795), cyan, blue, violet);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+#tannerSection{
+
+    margin-top: 40px;
+    padding: 40px;
+    width: 300px;
+}

@@ -47,6 +47,29 @@ function renderImgThree(options) {
   htmlBody.appendChild(imageUl);
 }
 
+function renderImgTwo(options) {
+  var imageUl = document.createElement('ul');
+  imageUl.className = 'img-two';
+
+  var imgOneLi = document.createElement('li');
+  var imgOne = document.createElement('img');
+  imgOne.src = options[0];
+
+  var imgTwoLi = document.createElement('li');
+  var imgTwo = document.createElement('img');
+  imgTwo.src = options[1];
+  
+  imgOneLi.appendChild(imgOne);
+  imgTwoLi.appendChild(imgTwo);
+
+
+  imageUl.appendChild(imgOneLi);
+  imageUl.appendChild(imgTwoLi);
+  
+
+  htmlBody.appendChild(imageUl);
+}
+
 function renderArticleRight(options) {
   var article = document.createElement('section');
   article.className = 'article-right';
@@ -59,8 +82,27 @@ function renderArticleRight(options) {
   htmlBody.appendChild(article);
 }
 
+function renderArticleLeft(options) {
+  var article = document.createElement('section');
+  article.className = 'article-left'; 
+  var image = document.createElement('img');
+  var text = document.createElement('p');
+  img.src = options[0];
+  text.textContent = options [1]
+  article.appendChild(text);
+  article.appendChild(image);
+  htmlbody.appendChild(article);
+}
 
+function renderTextElement(options){
+ 
+  var text = document.createElement('p')
+  text.className= 'text'
+  text.textContent = options[0];
 
+  htmlbody.appendChild(text);
+  
+}
 
 
 
@@ -78,11 +120,20 @@ for(var i=0; i<elements.length; i++) {
     case 'img-one':
       renderImgOne(elements[i].options);
       break;
+    case 'img-two':
+      renderImgTwo(elements[i].options);
+      break;
     case 'img-three':
       renderImgThree(elements[i].options);
       break;
     case 'article-right':
       renderArticleRight(elements[i].options);
-    
+        break;
+    case 'article-left':
+      renderArticleLeft(elements[i].options);
+        break;
+    case 'text':
+      renderTextElement(elements[i].options);
+        break;
   }
 }
