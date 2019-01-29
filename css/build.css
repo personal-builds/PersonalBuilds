@@ -57,6 +57,6 @@ form select {
 form label{
     padding:10px;
 }
-
-
-
+textarea {
+    resize: none;
+  }
