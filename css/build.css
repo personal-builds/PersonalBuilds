@@ -1,9 +1,22 @@
 body{
     background: gray;
 }
-header nav a{
-    margin-left: 120px;
+header{
+    margin:auto;
+    width:960px;
+    padding:20px;
+    background-color:#5EAFA8;
+    
 }
+nav a {
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 15px;
+    color: #2A5175;
+    transition: 350ms;
+    font-size: 29px;
+    font-family: Stencil std, fantasy;
+} 
 button{
     border: 5px solid #8a2530;
     padding: 10px, 40px;
