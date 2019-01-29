@@ -1,10 +1,10 @@
 header{
     margin:auto;
     width: 960px;
-background-color: #5EAFA8;
+background: linear-gradient(to right, red,  yellow, indigo, violet);
 font-size: 25px;
 font-family: Stencil std, fantasy;
-
+margin-bottom:40px;
 }
 header h1{
     text-align: center;
@@ -16,8 +16,8 @@ nav a {
     text-decoration: none;
     margin-left: 25px;
     margin-right: 22px;
-    color: #2A5175;
-    transition: 3500ms;
+    color: black;
+    transition: 350ms;
     
 } 
 body{
@@ -27,15 +27,18 @@ body{
 }
 main h2{
     padding: 20px;
-    background-color: #8A2530;
+   background:linear-gradient(to left, rgba(221, 50, 27, 0.726), rgba(51, 238, 51, 0.589));
     margin:auto;
     width: 850px;
     border-radius: 20px;
 }
 body main {
-    border: 20px inset  #2A5175;
+    border: 25px solid black;
+    border-radius: 20px;
     background-color: #F7EECD;
     font-size: 24px;
+    background: linear-gradient(to right, rgb(5, 5, 190), purple);
+    color:rgb(192, 176, 176);
 }
 
 body main p{
@@ -55,20 +58,20 @@ main ol li{
 button a{
     text-decoration: none;
 }
- button{
-     margin-left: 770px;
-    border:none;
-    padding: 10px 40px;
-    background:black;
-    color: white;
-    border-radius: 10px;
-    font-size: 18px;
-    transition: 350ms;
-    cursor: pointer;
-}
-
-button:hover{
-    border : 1px solid black;
+button{
+    border: 5px solid #8a2530;
+    padding: 10px, 40px;
     background: white;
-    color:black;
-} 
+    color: #2a5175;
+    border-radius: 30px;
+    font-size: 20px;
+    transition: 300ms;
+    cursor: pointer;
+    margin-left:820px;
+}
+button:hover{
+    border: 5px solid #2a5175;
+    background: #f7eecd;
+    color: #8a2530;
+    font-weight: bold;
+}

@@ -43,11 +43,11 @@ function buildTitle(options) {
     <link rel="stylesheet" src="css/reset.css" type="text/css" />
     <link rel="stylesheet" src="css/style.css" type="text/css" />
 
-    </head>
+  </head>
 
-    <html>
-      <body>
-      `;
+  <html>
+    <body>
+    `;
 }
 
 // Header options:
@@ -55,9 +55,11 @@ function buildTitle(options) {
 
 function buildHeader(options) {
   html += `    <header>
-      <h1>"${options[0]}"</h1>
-    </header>
-    <main>`;
+          <h1>"${options[0]}"</h1>
+        </header>
+    
+    <main>
+      `;
 }
 
 // img-one options:
@@ -68,16 +70,18 @@ function buildImageOne(options) {
 
 function buildImageThree(options) {
   html += `<ul class="img-three">
-    <li><img src = "${options[0]}"></li>
-    <li><img src = "${options[1]}"></li>
-    <li><img src = "${options[2]}"></li>
+      <li><img src = "${options[0]}"></li>
+      <li><img src = "${options[1]}"></li>
+      <li><img src = "${options[2]}"></li>
+    </ul>
     `
 }
 
 function buildArticleRight(options) {
   html += `<section id="article-right">
-    <img src="${options[0]}" />
-    <p>${options[2]}</p>
+      <img src="${options[0]}" />
+      <p>${options[2]}</p>
+    </section>
     `
 }
 

@@ -10,11 +10,12 @@ function renderHeader(options) {
   var headerText = document.createElement('h1');
   headerText.textContent = options[0];
   header.appendChild(headerText);
+  htmlBody.appendChild(header);
 }
 
 function renderImgOne(options) {
   var image = document.createElement('img');
-  image.classNmae = 'img-one';
+  image.className = 'img-one';
   image.src = options[0];
   htmlBody.appendChild(image);
 }
@@ -48,6 +49,7 @@ function renderImgThree(options) {
 
 function renderArticleRight(options) {
   var article = document.createElement('section');
+  article.className = 'article-right';
   var image = document.createElement('img');
   var text = document.createElement('p');
   image.src = options[0];
