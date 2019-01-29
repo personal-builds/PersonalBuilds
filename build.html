@@ -15,18 +15,11 @@
       <!-- <img> -->
       <nav>
 
-        <a href="#"><button>Home</button></a>
+        <a href="index.html"><button>Home</button></a>
         <a href="build.html"><button>Build Your Website</button></a>
         <a href="preview.html"><button>Preview Your Page</button></a>
         <a href="output.html"><button>Get the Code</button></a>
-
-        <!-- # is to not swap pages -->
-        <a href="index.html">Home</a>
-        <a href="#">Build Your Website</a>
-        <a href="preview.html">Preview Your Page</a>
-        <a href="output.html">Get the Code</a>
-        <a href="about-us.html">Developers</a>
-        
+        <a href="about-us.html"><button>Developers</button></a>
       </nav>
       <h1></h1>
     </header>
@@ -50,10 +43,10 @@
         <fieldset>
           <legend>Website Input</legend>
           <label for="title">Title</label>
-          <input name="title" type="text" required id="title">
+          <input class="titleAndHeader"name="title" type="text" required id="title">
 
           <label for="header">Header Text</label>
-          <input name="header" type="text" required id="header">
+          <input class="titleAndHeader"name="header" type="text" required id="header">
 
           <select id="img1">
               <option value="">Please choose an</option>
@@ -108,7 +101,7 @@
 
           <textarea id= "article" name="Text1" cols="40" rows="5"></textarea>
 
-          <input name="article-text" type="text" id="article">
+ 
 
           <button type="submit">Save</buttom>
 

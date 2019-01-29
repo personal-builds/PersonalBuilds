@@ -27,13 +27,19 @@ legend {
 fieldset{
     width: 1480px;
     border: 5px solid #5EAFA8;
+     
 }
 form fieldset {
+   padding: 40px;
     color: white;
     width: 600px;
     margin: auto;
     display: flex;
     background: #8a2530;
+}
+.titleAndHeader{
+    background-color: #f7eecd;
+    margin-bottom:15px;
 }
 form select {
     background-color: #f7eecd;
@@ -44,6 +50,10 @@ form select {
     color: black;
     font-size: 18px;
     background-color: #f7eecd;
+  
+}
+form label{
+    padding:10px;
 }
 
 
