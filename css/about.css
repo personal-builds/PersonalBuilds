@@ -1,10 +1,80 @@
-*img{
-    width: 300px;
+
+body header{
+    margin: auto;
+    background-color: #666;
+    height: 150px;
+    width: 960px;
+    margin-bottom: 40px;
 }
-header{
-    background-color: red;
-}
+
+
 #tannersPic{
     transform: rotate(90deg);
     width: 350px;
+}
+header{
+    border-radius: 20px;
+    border: 20px solid black;
+    margin:auto;
+    width: 960px;
+    background: linear-gradient(to right, red,  orange, indigo, violet);
+    font-size: 25px;
+    font-family: Stencil std, fantasy;
+    margin-bottom:40px;
+    margin-top: 40px;
+}
+nav a {
+    
+    text-decoration: none;
+    margin-left: 7%;
+    margin-right: 4%;
+    color: black;
+    transition: 350ms;
+    
+} 
+main{
+    width:960px;
+}
+body{
+    margin:auto;
+    width: 960px;
+    background-color:rgb(73, 73, 73);
+}
+body main {
+    border: 25px solid black;
+    border-radius: 20px;
+    background-color: #F7EECD;
+    font-size: 24px;
+    background: linear-gradient(to right, rgb(5, 5, 190), rgb(139, 17, 139));
+    color:rgb(192, 176, 176);
+}
+
+body main p{
+    line-height: 35px;
+    margin:auto;
+    width: 720px;
+    text-indent: 16px;
+    font-family: Comic Sans MS, cursive, sans-serif;
+}
+button a{
+    text-decoration: none;
+}
+button{
+    height: 60px;
+    width:120px;
+    border: 5px solid Black;
+    padding: 10px, 40px;
+    background: linear-gradient(to bottom right, lime, rgb(46, 155, 189));
+    color: #2a5175;
+    border-radius: 30px;
+    font-size: 20px;
+    transition: 300ms;
+    cursor: pointer;
+    margin-left:820px;
+}
+button:hover{
+    border: 10px solid white;
+    background: linear-gradient(to bottom left, lime, rgb(46, 155, 189));
+    color: #8a2530;
+    font-weight: bold;
 }
