@@ -17,7 +17,7 @@ nav a {
     margin-left: 25px;
     margin-right: 22px;
     color: #2A5175;
-    transition: 3500ms;
+    transition: 350ms;
     
 } 
 body{
@@ -55,20 +55,20 @@ main ol li{
 button a{
     text-decoration: none;
 }
- button{
-     margin-left: 770px;
-    border:none;
-    padding: 10px 40px;
-    background:black;
-    color: white;
-    border-radius: 10px;
-    font-size: 18px;
-    transition: 350ms;
-    cursor: pointer;
-}
-
-button:hover{
-    border : 1px solid black;
+button{
+    border: 5px solid #8a2530;
+    padding: 10px, 40px;
     background: white;
-    color:black;
-} 
+    color: #2a5175;
+    border-radius: 30px;
+    font-size: 20px;
+    transition: 300ms;
+    cursor: pointer;
+    margin-left:820px;
+}
+button:hover{
+    border: 5px solid #2a5175;
+    background: #f7eecd;
+    color: #8a2530;
+    font-weight: bold;
+}
