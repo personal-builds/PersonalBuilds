@@ -5,6 +5,7 @@ body header{
     height: 150px;
     width: 960px;
     margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 
@@ -24,9 +25,9 @@ header{
     margin-top: 40px;
 }
 nav a {
-    
+    margin: auto;
     text-decoration: none;
-    margin-left: 7%;
+    margin-left: 14%;
     margin-right: 4%;
     color: black;
     transition: 350ms;
@@ -78,3 +79,10 @@ button:hover{
     color: #8a2530;
     font-weight: bold;
 }
+body header h1{
+    margin: auto;
+    margin-left: 35%;
+    font-size: 80px;
+    background: -webkit-linear-gradient( rgba(0, 0, 0, 0.767), rgba(238, 130, 238, 0.658), rgba(0, 0, 255, 0.795), cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
