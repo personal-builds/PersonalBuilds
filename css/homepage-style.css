@@ -1,16 +1,20 @@
 header{
+    border-radius: 20px;
+    border: 20px solid black;
     margin:auto;
     width: 960px;
-background: linear-gradient(to right, red,  yellow, indigo, violet);
-font-size: 25px;
-font-family: Stencil std, fantasy;
-margin-bottom:40px;
+    background: linear-gradient(to right, red,  orange, indigo, violet);
+    font-size: 25px;
+    font-family: Stencil std, fantasy;
+    margin-bottom:40px;
+    margin-top: 40px;
 }
 header h1{
     text-align: center;
-    font-size:45px;
+    font-size:80px;
     margin-top:20px;
     margin-bottom:35px;
+    color:rgb(231, 231, 231);
 }
 nav a {
     text-decoration: none;
@@ -20,6 +24,9 @@ nav a {
     transition: 350ms;
     
 } 
+main{
+    width:960px;
+}
 body{
     margin:auto;
     width: 960px;
