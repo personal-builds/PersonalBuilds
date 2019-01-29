@@ -2,7 +2,7 @@ body{
     background: gray;
 }
 header nav a{
-    margin-left: 210px;
+    margin-left: 120px;
 }
 button{
     border: 5px solid #8a2530;
@@ -21,12 +21,12 @@ button:hover{
     font-weight: bold;
 }
 legend {
-    font-size: 30px;
+    font-size: 40px;
     color: white;
 }
 fieldset{
     width: 1480px;
-    border: 5px solid #5EAFA8;
+    border: 20px inset  #2A5175;
      
 }
 form fieldset {
@@ -36,6 +36,7 @@ form fieldset {
     margin: auto;
     display: flex;
     background: #8a2530;
+    font-size: 25px;
 }
 .titleAndHeader{
     background-color: #f7eecd;
@@ -43,6 +44,7 @@ form fieldset {
 }
 form select {
     background-color: #f7eecd;
+    font-size: 15px;
 }
 #article{
     width: 960px;
