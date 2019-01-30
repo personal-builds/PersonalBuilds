@@ -88,6 +88,7 @@ function listCLickHandler(event){
     var index = buttonNumber(event.target.id);
     Element.list.splice(index, 1)
     displayList()
+    Element.store();
     return
   } 
   if(event.target.className === 'uButton') {
@@ -97,6 +98,7 @@ function listCLickHandler(event){
     Element.list[index] = Element.list[index - 1];
     Element.list[index- 1] = swap;
     displayList()
+    Element.store();
     return
   }
    if(event.target.className === 'dButton') {
@@ -106,6 +108,7 @@ function listCLickHandler(event){
     Element.list[index] = Element.list[index + 1];
     Element.list[index + 1] = swap;
     displayList()
+    Element.store();
     return
    }
 }
@@ -186,6 +189,12 @@ table.innerHTML='';
     firstRow.appendChild(tdEl);
     tdEl= document.createElement('td')
     if (i < 2){
+      if(i===0){
+        tdEl.onchange=saveTitle
+      }
+      if (i===1){
+        tdEl.onchange=saveHeader
+      }
       var input = document.createElement('input');
       input.type = 'text';
       input.textContent= Element.list[i].options[0]
@@ -258,3 +267,12 @@ optionThreeDiv.style.visibility = "hidden"
 displayList();
 document.getElementsByTagName('select')[1].addEventListener('click', themeHandler);
 document.getElementById('preview').addEventListener('click', previewButton);
+
+function saveTitle(event){
+  Element.list[0].options[0]=event.target.value;
+  Element.store();
+}
+function saveHeader(event){
+  Element.list[1].options[0]=event.target.value;
+  Element.store();
+}
