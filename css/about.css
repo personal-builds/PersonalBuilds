@@ -84,7 +84,7 @@ body header h1{
     margin: auto;
     margin-left: 35%;
     font-size: 80px;
-    background: -webkit-linear-gradient( rgba(0, 0, 0, 0.767), rgba(238, 130, 238, 0.658), rgba(0, 0, 255, 0.795), cyan, blue, violet);
+    background: -webkit-linear-gradient(  rgba(0, 0, 255, 0.795), cyan, blue, violet);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
