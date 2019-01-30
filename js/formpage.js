@@ -144,11 +144,13 @@ table.innerHTML='';
   for(var i=0; i< Element.list.length; i++){
     var firstRow = document.createElement('tr');
     var tdEl = document.createElement('td');
-    var upButton = document.createElement('button');
-    upButton.className= 'upButton'
-    upButton.textContent = '\u25B2'
-    upButton.id= `upButton ${i}`
-    tdEl.appendChild(upButton)
+    if(i> 2){
+      var upButton = document.createElement('button');
+      upButton.className= 'upButton'
+      upButton.textContent = '\u25B2'
+      upButton.id= `upButton ${i}`
+      tdEl.appendChild(upButton)
+    }
     firstRow.appendChild(tdEl);
     tdEl= document.createElement('td')
     tdEl.textContent=Element.list[i].type
@@ -161,11 +163,13 @@ table.innerHTML='';
 
     var twoRow = document.createElement('tr')
     var tdEl = document.createElement('td');
-    var xButton = document.createElement('button');
-    xButton.className='xButton'
-    xButton.textContent= 'X'
-    xButton.id=`xButton${i}`
-    tdEl.appendChild(xButton)
+    if(i> 1){
+      var xButton = document.createElement('button');
+      xButton.className='xButton'
+      xButton.textContent= 'X'
+      xButton.id=`xButton${i}`
+      tdEl.appendChild(xButton)
+    }
     twoRow.appendChild(tdEl);
     tdEl = document.createElement('td')
     if (Element.list[i].options[1]){
@@ -177,11 +181,13 @@ table.innerHTML='';
 
     var thirdRow = document.createElement('tr')
     var tdEl =document.createElement('td');
-    var downButton = document.createElement('button');
-    downButton.className = 'downButton'
-    downButton.textContent= '\u25BC'
-    downButton.id=`downButton${i}`
-    tdEl.appendChild(downButton)
+    if(i> 1 && i< Element.list.length -1){
+      var downButton = document.createElement('button');
+      downButton.className = 'downButton'
+      downButton.textContent= '\u25BC'
+      downButton.id=`downButton${i}`
+      tdEl.appendChild(downButton)
+    }
     thirdRow.appendChild(tdEl);
     tdEl = document.createElement('td');
     if(Element.list[i].options[2]){
