@@ -244,10 +244,17 @@ Element.list= JSON.parse(localStorage.getItem('website'))
   new Element('title', [''])
   new Element('header', [''])
 }
+function themeHandler(event){
+  localStorage.setItem('theme', event.target.value)
+}
 
-
-
+function previewButton(event){
+  document.getElementById('preview-frame').src +='';
+  // https://stackoverflow.com/questions/86428/what-s-the-best-way-to-reload-refresh-an-iframe
+}
 table.addEventListener('click', listCLickHandler);
 optionTwoDiv.style.visibility = "hidden"
 optionThreeDiv.style.visibility = "hidden"
 displayList();
+document.getElementsByTagName('select')[1].addEventListener('click', themeHandler);
+document.getElementById('preview').addEventListener('click', previewButton);

@@ -137,3 +137,11 @@ for(var i=0; i<elements.length; i++) {
         break;
   }
 }
+
+var csshref = `css/preview${localStorage.getItem('theme')}.css`
+var head = document.getElementsByTagName('head')[0];
+var link = document.createElement('link');
+link.href = csshref
+link.rel='stylesheet' 
+link.type= 'text/css'
+head.appendChild(link);
