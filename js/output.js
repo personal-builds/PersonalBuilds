@@ -18,7 +18,7 @@ function buildHTML() {
         buildImageOne(elements[i].options);
         break;
       case 'img-two':
-        buildImageTwo(elements[i]).options;
+        buildImageTwo(elements[i].options);
         break;
       case 'img-three':
         buildImageThree(elements[i].options);
