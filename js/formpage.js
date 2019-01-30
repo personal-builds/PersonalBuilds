@@ -185,7 +185,14 @@ table.innerHTML='';
     tdEl.rowSpan='3'
     firstRow.appendChild(tdEl);
     tdEl= document.createElement('td')
+    if (i < 2){
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.textContent= Element.list[i].options[0]
+      tdEl.appendChild(input);
+    }else{
     tdEl.textContent=Element.list[i].options[0];
+    }
     firstRow.appendChild(tdEl);
     table.appendChild(firstRow);
 
@@ -239,7 +246,8 @@ Element.list= JSON.parse(localStorage.getItem('website'))
 }
 
 
-displayList();
+
 table.addEventListener('click', listCLickHandler);
 optionTwoDiv.style.visibility = "hidden"
 optionThreeDiv.style.visibility = "hidden"
+displayList();
