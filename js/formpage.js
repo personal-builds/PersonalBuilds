@@ -14,14 +14,6 @@ var optionOneDiv = document.getElementById('option-one-div');
 var optionTwoDiv = document.getElementById('option-two-div');
 var optionThreeDiv = document.getElementById('option-three-div');
 
-if(localStorage.getItem('website')){
-Element.list= JSON.parse(localStorage.getItem('website'))
-} else{
-  Element.list=[];
-  new Element('title', [''])
-  new Element('header', [''])
-}
-
 
 
 
@@ -82,6 +74,42 @@ function submitHandler(event) {
   Element.store();
   displayList();
 }
+
+function buttonNumber(id){ 
+  var output= id.slice(7, id.length);
+  return parseInt(output);
+}
+
+function listCLickHandler(event){
+  if (event.target.type !== 'submit'){
+    return
+  }
+  if (event.target.className === 'xButton'){
+    var index = buttonNumber(event.target.id);
+    Element.list.splice(index, 1)
+    displayList()
+    return
+  } 
+  if(event.target.className === 'uButton') {
+    
+    var index = buttonNumber(event.target.id);
+    var swap = Element.list[index] 
+    Element.list[index] = Element.list[index - 1];
+    Element.list[index- 1] = swap;
+    displayList()
+    return
+  }
+   if(event.target.className === 'dButton') {
+    
+    var index = buttonNumber(event.target.id);
+    var swap = Element.list[index] 
+    Element.list[index] = Element.list[index + 1];
+    Element.list[index + 1] = swap;
+    displayList()
+    return
+   }
+}
+
 
 document.getElementsByTagName('form')[0].addEventListener("submit", submitHandler);
 
@@ -146,9 +174,9 @@ table.innerHTML='';
     var tdEl = document.createElement('td');
     if(i> 2){
       var upButton = document.createElement('button');
-      upButton.className= 'upButton'
+      upButton.className= 'uButton'
       upButton.textContent = '\u25B2'
-      upButton.id= `upButton ${i}`
+      upButton.id= `uButton${i}`
       tdEl.appendChild(upButton)
     }
     firstRow.appendChild(tdEl);
@@ -183,9 +211,9 @@ table.innerHTML='';
     var tdEl =document.createElement('td');
     if(i> 1 && i< Element.list.length -1){
       var downButton = document.createElement('button');
-      downButton.className = 'downButton'
+      downButton.className = 'dButton'
       downButton.textContent= '\u25BC'
-      downButton.id=`downButton${i}`
+      downButton.id=`dButton${i}`
       tdEl.appendChild(downButton)
     }
     thirdRow.appendChild(tdEl);
@@ -202,6 +230,16 @@ table.innerHTML='';
     
     
 }
+if(localStorage.getItem('website')){
+Element.list= JSON.parse(localStorage.getItem('website'))
+} else{
+  Element.list=[];
+  new Element('title', [''])
+  new Element('header', [''])
+}
+
+
 displayList();
+table.addEventListener('click', listCLickHandler);
 optionTwoDiv.style.visibility = "hidden"
 optionThreeDiv.style.visibility = "hidden"
