@@ -102,7 +102,14 @@ body header nav h1{
 }
 td{
     border: 1px solid black;
+    height: 30px;
 }
 tr td:nth-of-type(1){
     width: 60px;
+}
+tr:nth-of-type(6n+1) td, tr:nth-of-type(6n+2) td, tr:nth-of-type(6n+3) td{
+    background-color: lightgrey;
+}
+tr:nth-of-type(6n+4) td, tr:nth-of-type(6n+5) td, tr:nth-of-type(6n+6) td{
+    background-color: silver;
 }
