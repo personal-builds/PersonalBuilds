@@ -1,7 +1,6 @@
 body {
-   width: 960px;
+    width: 960px;
     margin: 0 auto;
-    background-color: #4A4238;
   }
   
   h1 {
@@ -38,7 +37,6 @@ body {
   }
   
   .article-right {
-    height: 400px;
     width: 100%;
   }
   
