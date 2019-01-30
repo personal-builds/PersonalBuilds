@@ -17,12 +17,22 @@ function buildHTML() {
       case 'img-one':
         buildImageOne(elements[i].options);
         break;
+      case 'img-two':
+        buildImageTwo(elements[i]).options;
+        break;
       case 'img-three':
         buildImageThree(elements[i].options);
         break;
       case 'article-right':
         buildArticleRight(elements[i].options);
         break;
+      case 'article-left':
+        buildArticleLeft(elements[i].options);
+        break;
+      case 'text' :
+        buildText(elements[i].options);
+        break;
+      
     }
   }
   buildEnd();
