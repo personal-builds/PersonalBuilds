@@ -39,7 +39,6 @@ function buildTitle(options) {
 
   <head>
     <title>"${options[0]}"</title>
-  
     <link rel="stylesheet" src="css/reset.css" type="text/css" />
     <link rel="stylesheet" src="css/style.css" type="text/css" />
 
@@ -67,6 +66,13 @@ function buildImageOne(options) {
   html += `<img src="${options[0]}" class="img-one"
   `;
 }
+function buildImageTwo(options) {
+  html += `<ul class="img-two">
+      <li><img src = "${options[0]}"></li>
+      <li><img src = "${options[1]}"></li>
+      </ul>
+      `
+      }
 
 function buildImageThree(options) {
   html += `<ul class="img-three">
@@ -84,9 +90,20 @@ function buildArticleRight(options) {
     </section>
     `
 }
+function buildArticleLeft(options) {
+  html += `<section id="article-left">
+      <p>${options[2]}</p>
+      <img src="${options[0]}" />
+      
+    </section>
+    `
+}
+function buildText(options) {
+  html += `<p class ="text">${options[0]}</p>`
+}
 
-function buildEnd() {
-  html += `    </main>
+function buildEnd(options) {
+  html += `</main>
 
       <footer>
         <p>Copyright info?</p>
