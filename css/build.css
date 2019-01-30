@@ -6,6 +6,7 @@ body{
 header{
     
     border: 20px solid black;
+    font-size: 25px;
     border-radius: 20px;
     margin:auto;
     width:960px;
@@ -16,11 +17,9 @@ header{
 }
 nav a {
     text-decoration: none;
-    margin-left: 6%;
-    margin-right: 3%;
-    color:black;
-    transition: 350ms;
-    font-size: 29px;
+    margin-left: 7%;
+    margin-right: 4%;
+    color: black;
     font-family: Stencil std, fantasy;
 } 
 button{
@@ -32,6 +31,7 @@ button{
     font-size: 20px;
     transition: 350ms;
     cursor: pointer;
+    float: right;
 }
 button:hover{
     border: 10px solid white;
@@ -39,22 +39,23 @@ button:hover{
     color: #8a2530;
     font-weight: bold;
 }
+
+
 legend {
     font-size: 50px;
     color: white;
 }
 form fieldset {
-   padding: 40px;
+   padding: 10px 20px;
     color: white;
     width: 300px;
     margin: auto;
-    display:flex;
     background: linear-gradient(to right, rgb(5, 5, 190), rgb(139, 17, 139));
     font-size: 25px;
     display:inline-block;
     border: 20px solid black;
-    float:left;
-    height: 320px;
+    float: left;
+    height: 300px;
     border-radius: 20px;
 }
 .titleAndHeader{
@@ -80,36 +81,64 @@ form label{
 table{
     margin-top: 20px;
     width: 500px;
-    height: 400px;
+    height: 550px;
     border: 10px solid black;
     display: inline-block;
     border-radius: 20px;
     overflow-y: scroll;
+    float: right;
 
 }
 iframe{
     width: 960px;
+    height: 900px;
 }
 textarea {
     resize: none;
 }
 body header nav h1{
     font-size: 80px;
-    margin:auto;
-    color:white;
-    margin-left : 15%;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    text-align: center;
+    color:rgb(231, 231, 231);
     font-family: Stencil std, fantasy;
+
 }
 td{
     border: 1px solid black;
     height: 30px;
+    word-wrap: break-word;
 }
 tr td:nth-of-type(1){
     width: 60px;
+}
+tr td:nth-of-type(2){
+    width: 60px;
+    
+}
+tr td:nth-of-type(3){
+    width: 400px;
+    
 }
 tr:nth-of-type(6n+1) td, tr:nth-of-type(6n+2) td, tr:nth-of-type(6n+3) td{
     background-color: lightgrey;
 }
 tr:nth-of-type(6n+4) td, tr:nth-of-type(6n+5) td, tr:nth-of-type(6n+6) td{
     background-color: silver;
+}
+form input{
+    display: block;
+}
+section{
+    padding: 10px 20px;
+    color: white;
+    width: 300px;
+    margin: -20px auto 0;
+    background: linear-gradient(to right, rgb(5, 5, 190), rgb(139, 17, 139));
+    font-size: 25px;
+    border: 20px solid black;
+    float: left;
+    height: 180px;
+    border-radius: 20px;
 }
