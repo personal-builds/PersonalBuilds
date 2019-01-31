@@ -17,3 +17,8 @@ section p:nth-of-type(2) {
   color: black;
   overflow: scroll;
 }
+body header img{
+  width: 120px;
+  height:60px;
+  border-radius: 20px;
+}

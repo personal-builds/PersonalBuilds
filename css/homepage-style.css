@@ -112,3 +112,8 @@ button a{
     opacity: 1;
     right: 0;
   }
+  body header img{
+    width: 120px;
+    height:60px;
+    border-radius: 20px;
+}
