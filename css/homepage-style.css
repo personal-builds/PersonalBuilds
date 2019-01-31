@@ -41,6 +41,7 @@ main h2{
     border-radius: 20px;
 }
 body main {
+    
     border: 25px solid black;
     border-radius: 20px;
     background-color: #F7EECD;
@@ -57,8 +58,9 @@ body main p{
     font-family: Comic Sans MS, cursive, sans-serif;
 }
 main ol li{
+    
     margin-top:20px;
-    margin-left:25px;
+    margin-left:50px;
     list-style-type: decimal;
     font-weight: bold;
 
@@ -77,7 +79,7 @@ button{
     font-size: 20px;
     transition: 300ms;
     cursor: pointer;
-    margin-left:820px;
+    margin-left:845px;
 }
 button:hover{
     border: 10px solid white;
