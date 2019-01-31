@@ -16,6 +16,9 @@ var optionThreeDiv = document.getElementById('option-three-div');
 var optionOneLabel = document.getElementById('option-one-label');
 var optionTwoLabel = document.getElementById('option-two-label');
 var optionThreeLabel = document.getElementById('option-three-label');
+var optionOneSelect = document.getElementById('option-one-select');
+var optionTwoSelect = document.getElementById('option-two-select');
+var optionThreeSelect = document.getElementById('option-three-select');
 
 
 
@@ -123,6 +126,7 @@ function elementSelect(event) {
   switch (event.target.value) {
     case "img-one":
       optionOneDiv.style.visibility = "visible";
+      optionOneSelect.style.visibility = 'visible';
       optionTwoDiv.style.visibility = "hidden";
       optionThreeDiv.style.visibility = "hidden";
       optionOne.type = 'url';
@@ -130,7 +134,9 @@ function elementSelect(event) {
       break;
     case "img-two":
       optionOneDiv.style.visibility = "visible";
+      optionOneSelect.style.visibility = 'visible';
       optionTwoDiv.style.visibility = "visible";
+      optionTwoSelect.style.visibility = 'visible';
       optionThreeDiv.style.visibility = "hidden";
       optionTwo.type = 'url';
       optionOne.type = 'url';
@@ -139,8 +145,11 @@ function elementSelect(event) {
       break
     case "img-three":
       optionOneDiv.style.visibility = "visible";
+      optionOneSelect.style.visibility = 'visible';
       optionTwoDiv.style.visibility = "visible";
+      optionTwoSelect.style.visibility = 'visible';
       optionThreeDiv.style.visibility = "visible";
+      optionThreeSelect.style.visibility = 'visible';
       optionOne.type = 'url';
       optionTwo.type = 'url';
       optionThree.type = 'url';
@@ -150,6 +159,7 @@ function elementSelect(event) {
       break
     case "text":
       optionOneDiv.style.visibility = "visible";
+      optionOneSelect.style.visibility = 'hidden';
       optionTwoDiv.style.visibility = "hidden";
       optionThreeDiv.style.visibility = "hidden";
       optionOne.type = 'text';
@@ -157,7 +167,9 @@ function elementSelect(event) {
       break;
     case "article-right":
       optionOneDiv.style.visibility = "visible";
+      optionOneSelect.style.visibility = 'visible';
       optionTwoDiv.style.visibility = "visible";
+      optionTwoSelect.style.visibility = 'hidden';
       optionThreeDiv.style.visibility = "hidden";
       optionOne.type = 'url';
       optionTwo.type = 'text';
@@ -166,7 +178,9 @@ function elementSelect(event) {
       break;
     case "article-left":
       optionOneDiv.style.visibility = "visible";
+      optionOneSelect.style.visibility = 'hidden';
       optionTwoDiv.style.visibility = "visible";
+      optionTwoSelect.style.visibility = 'visible';
       optionThreeDiv.style.visibility = "hidden";
       optionOne.type = 'text';
       optionTwo.type = 'url';
@@ -260,6 +274,15 @@ function displayList() {
 
 
 }
+
+function urlOptionHandler(event) {
+  // The name of the input field is the same as the select, minus '-select', this takes the extra off
+  var inputName = event.target.id.trimEnd(7);
+  var inputBox = document.getElementById(inputName);
+
+  
+}
+
 if (localStorage.getItem('website')) {
   Element.list = JSON.parse(localStorage.getItem('website'))
 } else {
