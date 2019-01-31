@@ -127,6 +127,7 @@ function elementSelect(event) {
     case "img-one":
       optionOneDiv.style.visibility = "visible";
       optionOneSelect.style.visibility = 'visible';
+      optionOne.disabled = true;
       optionTwoDiv.style.visibility = "hidden";
       optionThreeDiv.style.visibility = "hidden";
       optionOne.type = 'url';
@@ -135,8 +136,10 @@ function elementSelect(event) {
     case "img-two":
       optionOneDiv.style.visibility = "visible";
       optionOneSelect.style.visibility = 'visible';
+      optionOne.disabled = true;
       optionTwoDiv.style.visibility = "visible";
       optionTwoSelect.style.visibility = 'visible';
+      optionTwo.disabled = true;
       optionThreeDiv.style.visibility = "hidden";
       optionTwo.type = 'url';
       optionOne.type = 'url';
@@ -146,10 +149,13 @@ function elementSelect(event) {
     case "img-three":
       optionOneDiv.style.visibility = "visible";
       optionOneSelect.style.visibility = 'visible';
+      optionOne.disabled = true;
       optionTwoDiv.style.visibility = "visible";
       optionTwoSelect.style.visibility = 'visible';
+      optionTwo.disabled = true;
       optionThreeDiv.style.visibility = "visible";
       optionThreeSelect.style.visibility = 'visible';
+      optionThree.disabled = true;
       optionOne.type = 'url';
       optionTwo.type = 'url';
       optionThree.type = 'url';
@@ -160,6 +166,7 @@ function elementSelect(event) {
     case "text":
       optionOneDiv.style.visibility = "visible";
       optionOneSelect.style.visibility = 'hidden';
+      optionOne.disabled = false;
       optionTwoDiv.style.visibility = "hidden";
       optionThreeDiv.style.visibility = "hidden";
       optionOne.type = 'text';
@@ -168,8 +175,10 @@ function elementSelect(event) {
     case "article-right":
       optionOneDiv.style.visibility = "visible";
       optionOneSelect.style.visibility = 'visible';
+      optionOne.disabled = true;
       optionTwoDiv.style.visibility = "visible";
       optionTwoSelect.style.visibility = 'hidden';
+      optionTwo.disabled = false;
       optionThreeDiv.style.visibility = "hidden";
       optionOne.type = 'url';
       optionTwo.type = 'text';
@@ -179,7 +188,9 @@ function elementSelect(event) {
     case "article-left":
       optionOneDiv.style.visibility = "visible";
       optionOneSelect.style.visibility = 'hidden';
+      optionOne.disabled = false;
       optionTwoDiv.style.visibility = "visible";
+      optionTwo.disabled = true;
       optionTwoSelect.style.visibility = 'visible';
       optionThreeDiv.style.visibility = "hidden";
       optionOne.type = 'text';
@@ -277,10 +288,21 @@ function displayList() {
 
 function urlOptionHandler(event) {
   // The name of the input field is the same as the select, minus '-select', this takes the extra off
-  var inputName = event.target.id.trimEnd(7);
+  var inputName = event.target.id.slice(0, -7);
   var inputBox = document.getElementById(inputName);
 
-  
+  switch(event.target.value) {
+    case 'placeholder':
+      inputBox.disabled = true;
+      inputBox.value = 'https://via.placeholder.com/300x300?text=Placeholder'
+      break;
+    case 'thing':
+      inputBox.disabled = true;
+      inputBox.value = 'img/stock-photo-funny-man-with-watermelon-helmet-and-googles-looks-like-a-parasitic-caterpillar-157354478.jpg';
+      break;
+    case 'manual':
+      inputBox.disabled = false;
+  }
 }
 
 if (localStorage.getItem('website')) {
@@ -303,8 +325,12 @@ optionOneDiv.style.visibility = 'hidden'
 optionTwoDiv.style.visibility = 'hidden'
 optionThreeDiv.style.visibility = 'hidden'
 displayList();
-document.getElementsByTagName('select')[1].addEventListener('click', themeHandler);
+document.getElementById('preview-select').addEventListener('click', themeHandler);
 document.getElementById('preview').addEventListener('click', previewButton);
+document.getElementById('option-one-select').addEventListener('click', urlOptionHandler);
+document.getElementById('option-two-select').addEventListener('click', urlOptionHandler);
+document.getElementById('option-three-select').addEventListener('click', urlOptionHandler);
+
 
 function saveTitle(event) {
   Element.list[0].options[0] = event.target.value;
