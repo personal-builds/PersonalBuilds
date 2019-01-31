@@ -25,6 +25,9 @@ header{
     margin-bottom:40px;
     margin-top: 40px;
 }
+nav{
+    margin-top: 40px;
+}
 nav a {
     margin: auto;
     text-decoration: none;
