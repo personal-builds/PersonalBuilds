@@ -60,3 +60,6 @@ body {
   .img-two li {
     display: inline-block
     }
+    p{
+      overflow-wrap: break-word;
+    }
