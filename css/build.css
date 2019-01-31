@@ -11,7 +11,7 @@ header{
     margin:auto;
     width:960px;
     background: linear-gradient(to right, red,  orange, indigo, violet);
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 40px;
     
 }
@@ -145,5 +145,10 @@ section{
     border: 20px solid black;
     float: left;
     height: 80px;
+    border-radius: 20px;
+}
+body header nav img{
+    width: 120px;
+    height:60px;
     border-radius: 20px;
 }
