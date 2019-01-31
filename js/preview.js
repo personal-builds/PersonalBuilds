@@ -87,8 +87,8 @@ function renderArticleLeft(options) {
   article.className = 'article-left'; 
   var image = document.createElement('img');
   var text = document.createElement('p');
-  image.src = options[0];
-  text.textContent = options [1]
+  image.src = options[1];
+  text.textContent = options [0]
   article.appendChild(text);
   article.appendChild(image);
   htmlBody.appendChild(article);
