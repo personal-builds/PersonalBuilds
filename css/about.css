@@ -90,6 +90,7 @@ body header h1{
     background: -webkit-linear-gradient(  rgba(0, 0, 255, 0.795), cyan, blue, violet);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 6px 6px white;
 }
 #tannerSection{
 
