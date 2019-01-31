@@ -9,10 +9,13 @@ var articleText = document.getElementById('article');
 var optionOne = document.getElementById('option-one');
 var optionTwo = document.getElementById('option-two');
 var optionThree = document.getElementById('option-three');
-var table= document.getElementsByTagName('table')[0];
+var table = document.getElementsByTagName('table')[0];
 var optionOneDiv = document.getElementById('option-one-div');
 var optionTwoDiv = document.getElementById('option-two-div');
 var optionThreeDiv = document.getElementById('option-three-div');
+var optionOneLabel = document.getElementById('option-one-label');
+var optionTwoLabel = document.getElementById('option-two-label');
+var optionThreeLabel = document.getElementById('option-three-label');
 
 
 
@@ -24,13 +27,13 @@ function Element(type, options) {
 }
 
 // retrieve website data, if it exists
-if(localStorage.getItem('website')){
+if (localStorage.getItem('website')) {
   Element.list = JSON.parse(localStorage.getItem('website'));
 } else {
   Element.list = [];
 }
 
-Element.store = function() {
+Element.store = function () {
   localStorage.setItem('website', JSON.stringify(Element.list));
 }
 
@@ -41,27 +44,27 @@ Element.store = function() {
 
 function submitHandler(event) {
   event.preventDefault();
-  switch(event.target.type.value){
-    case('img-one'):
-    new Element('img-one', [optionOne.value])
-   break
-    case('img-two'):
-    new Element('img-two', [optionOne.value, optionTwo.value])
-   break
-    case('img-three'):
-    new Element('img-three', [optionOne.value, optionTwo.value, optionThree.value])
-   break
-   case('text'):
-   new Element('text', [optionOne.value])
-   break
-   case('article-left'):
-   new Element('article-left', [optionOne.value, optionTwo.value])
-   break
-   case('article-right'):
-   new Element('article-right', [optionOne.value, optionTwo.value])
-   break
+  switch (event.target.type.value) {
+    case ('img-one'):
+      new Element('img-one', [optionOne.value])
+      break
+    case ('img-two'):
+      new Element('img-two', [optionOne.value, optionTwo.value])
+      break
+    case ('img-three'):
+      new Element('img-three', [optionOne.value, optionTwo.value, optionThree.value])
+      break
+    case ('text'):
+      new Element('text', [optionOne.value])
+      break
+    case ('article-left'):
+      new Element('article-left', [optionOne.value, optionTwo.value])
+      break
+    case ('article-right'):
+      new Element('article-right', [optionOne.value, optionTwo.value])
+      break
   }
-  
+
   // reset the storage
   // Element.list = [];
 
@@ -75,204 +78,216 @@ function submitHandler(event) {
   displayList();
 }
 
-function buttonNumber(id){ 
-  var output= id.slice(7, id.length);
+function buttonNumber(id) {
+  var output = id.slice(7, id.length);
   return parseInt(output);
 }
 
-function listCLickHandler(event){
-  if (event.target.type !== 'submit'){
+function listCLickHandler(event) {
+  if (event.target.type !== 'submit') {
     return
   }
-  if (event.target.className === 'xButton'){
+  if (event.target.className === 'xButton') {
     var index = buttonNumber(event.target.id);
     Element.list.splice(index, 1)
     displayList()
     Element.store();
     return
-  } 
-  if(event.target.className === 'uButton') {
-    
+  }
+  if (event.target.className === 'uButton') {
+
     var index = buttonNumber(event.target.id);
-    var swap = Element.list[index] 
+    var swap = Element.list[index]
     Element.list[index] = Element.list[index - 1];
-    Element.list[index- 1] = swap;
+    Element.list[index - 1] = swap;
     displayList()
     Element.store();
     return
   }
-   if(event.target.className === 'dButton') {
-    
+  if (event.target.className === 'dButton') {
+
     var index = buttonNumber(event.target.id);
-    var swap = Element.list[index] 
+    var swap = Element.list[index]
     Element.list[index] = Element.list[index + 1];
     Element.list[index + 1] = swap;
     displayList()
     Element.store();
     return
-   }
+  }
 }
 
 
 document.getElementsByTagName('form')[0].addEventListener("submit", submitHandler);
 
-function elementSelect(event){
-  switch(event.target.value){
-    case "img-one": 
-      optionOneDiv.style.visibility = "visible"
-      optionTwoDiv.style.visibility = "hidden"
-      optionThreeDiv.style.visibility = "hidden"
-      optionOne.type= 'url'
-      break
+function elementSelect(event) {
+  switch (event.target.value) {
+    case "img-one":
+      optionOneDiv.style.visibility = "visible";
+      optionTwoDiv.style.visibility = "hidden";
+      optionThreeDiv.style.visibility = "hidden";
+      optionOne.type = 'url';
+      optionOneLabel.textContent = 'Image URL';
+      break;
     case "img-two":
-     optionOneDiv.style.visibility = "visible"
-     optionTwoDiv.style.visibility = "visible"
-     optionThreeDiv.style.visibility = "hidden"
-     optionTwo.type='url'
-     optionOne.type='url'
-     break
+      optionOneDiv.style.visibility = "visible";
+      optionTwoDiv.style.visibility = "visible";
+      optionThreeDiv.style.visibility = "hidden";
+      optionTwo.type = 'url';
+      optionOne.type = 'url';
+      optionOneLabel.textContent = 'Image URL:';
+      optionTwoLabel.textContent = 'Image URL:';
+      break
     case "img-three":
-     optionOneDiv.style.visibility = "visible"
-     optionTwoDiv.style.visibility = "visible"
-     optionThreeDiv.style.visibility = "visible"
-     optionOne.type='url'
-     optionTwo.type='url'
-     optionThree.type='url'
-     break
+      optionOneDiv.style.visibility = "visible";
+      optionTwoDiv.style.visibility = "visible";
+      optionThreeDiv.style.visibility = "visible";
+      optionOne.type = 'url';
+      optionTwo.type = 'url';
+      optionThree.type = 'url';
+      optionOneLabel.textContent = 'Image URL:';
+      optionTwoLabel.textContent = 'Image URL:';
+      optionThreeLabel.textContent = 'Image URL:';
+      break
     case "text":
-    optionOneDiv.style.visibility = "visible"
-    optionTwoDiv.style.visibility = "hidden"
-    optionThreeDiv.style.visibility = "hidden"
-    optionOne.type='text'
-     break
+      optionOneDiv.style.visibility = "visible";
+      optionTwoDiv.style.visibility = "hidden";
+      optionThreeDiv.style.visibility = "hidden";
+      optionOne.type = 'text';
+      optionOneLabel.textContent =  'Text Content:'
+      break;
     case "article-right":
-    optionOneDiv.style.visibility = "visible"
-    optionTwoDiv.style.visibility = "visible"
-    optionThreeDiv.style.visibility = "hidden"
-    optionOne.type='url'
-    optionTwo.type='text'
-     break
+      optionOneDiv.style.visibility = "visible";
+      optionTwoDiv.style.visibility = "visible";
+      optionThreeDiv.style.visibility = "hidden";
+      optionOne.type = 'url';
+      optionTwo.type = 'text';
+      optionOneLabel.textContent = 'Image URL:';
+      optionTwoLabel.textContent = 'Article Text:';
+      break;
     case "article-left":
-     optionOneDiv.style.visibility = "visible"
-     optionTwoDiv.style.visibility = "visible"
-     optionThreeDiv.style.visibility = "hidden"
-     optionOne.type='text'
-     optionTwo.type='url'
-     break
+      optionOneDiv.style.visibility = "visible";
+      optionTwoDiv.style.visibility = "visible";
+      optionThreeDiv.style.visibility = "hidden";
+      optionOne.type = 'text';
+      optionTwo.type = 'url';
+      optionOneLabel.textContent = 'Article Text:';
+      optionTwoLabel.textContent = 'Image URL:';
+      break;
     case '':
-     optionOneDiv.style.visibility = "hidden"
-     optionTwoDiv.style.visibility = "hidden"
-     optionThreeDiv.style.visibility = "hidden"
-     break
+      optionOneDiv.style.visibility = "hidden";
+      optionTwoDiv.style.visibility = "hidden";
+      optionThreeDiv.style.visibility = "hidden"; 
+      break
   }
 }
 document.getElementsByTagName('select')[0].addEventListener('click', elementSelect);
 
 
-function displayList(){
-table.innerHTML='';
+function displayList() {
+  table.innerHTML = '';
 
-  for(var i=0; i< Element.list.length; i++){
+  for (var i = 0; i < Element.list.length; i++) {
     var firstRow = document.createElement('tr');
     var tdEl = document.createElement('td');
-    if(i> 2){
+    if (i > 2) {
       var upButton = document.createElement('button');
-      upButton.className= 'uButton'
+      upButton.className = 'uButton'
       upButton.textContent = '\u25B2'
-      upButton.id= `uButton${i}`
+      upButton.id = `uButton${i}`
       tdEl.appendChild(upButton)
     }
     firstRow.appendChild(tdEl);
-    tdEl= document.createElement('td')
-    tdEl.textContent=Element.list[i].type
-    tdEl.rowSpan='3'
+    tdEl = document.createElement('td')
+    tdEl.textContent = Element.list[i].type
+    tdEl.rowSpan = '3'
     firstRow.appendChild(tdEl);
-    tdEl= document.createElement('td')
-    if (i < 2){
-      if(i===0){
-        tdEl.onchange=saveTitle
+    tdEl = document.createElement('td')
+    if (i < 2) {
+      if (i === 0) {
+        tdEl.onchange = saveTitle
       }
-      if (i===1){
-        tdEl.onchange=saveHeader
+      if (i === 1) {
+        tdEl.onchange = saveHeader
       }
       var input = document.createElement('input');
       input.type = 'text';
-      input.textContent= Element.list[i].options[0]
+      input.textContent = Element.list[i].options[0]
       tdEl.appendChild(input);
-    }else{
-    tdEl.textContent=Element.list[i].options[0];
+    } else {
+      tdEl.textContent = Element.list[i].options[0];
     }
     firstRow.appendChild(tdEl);
     table.appendChild(firstRow);
 
     var twoRow = document.createElement('tr')
     var tdEl = document.createElement('td');
-    if(i> 1){
+    if (i > 1) {
       var xButton = document.createElement('button');
-      xButton.className='xButton'
-      xButton.textContent= 'X'
-      xButton.id=`xButton${i}`
+      xButton.className = 'xButton'
+      xButton.textContent = 'X'
+      xButton.id = `xButton${i}`
       tdEl.appendChild(xButton)
     }
     twoRow.appendChild(tdEl);
     tdEl = document.createElement('td')
-    if (Element.list[i].options[1]){
-      tdEl.textContent=Element.list[i].options[1];
+    if (Element.list[i].options[1]) {
+      tdEl.textContent = Element.list[i].options[1];
     }
     twoRow.appendChild(tdEl);
     table.appendChild(twoRow);
-  
+
 
     var thirdRow = document.createElement('tr')
-    var tdEl =document.createElement('td');
-    if(i> 1 && i< Element.list.length -1){
+    var tdEl = document.createElement('td');
+    if (i > 1 && i < Element.list.length - 1) {
       var downButton = document.createElement('button');
       downButton.className = 'dButton'
-      downButton.textContent= '\u25BC'
-      downButton.id=`dButton${i}`
+      downButton.textContent = '\u25BC'
+      downButton.id = `dButton${i}`
       tdEl.appendChild(downButton)
     }
     thirdRow.appendChild(tdEl);
     tdEl = document.createElement('td');
-    if(Element.list[i].options[2]){
-      tdEl.textContent=Element.list[i].options[2];
+    if (Element.list[i].options[2]) {
+      tdEl.textContent = Element.list[i].options[2];
     }
     thirdRow.appendChild(tdEl);
     table.appendChild(thirdRow);
 
-    
-    
+
+
   }
-    
-    
+
+
 }
-if(localStorage.getItem('website')){
-Element.list= JSON.parse(localStorage.getItem('website'))
-} else{
-  Element.list=[];
+if (localStorage.getItem('website')) {
+  Element.list = JSON.parse(localStorage.getItem('website'))
+} else {
+  Element.list = [];
   new Element('title', [''])
   new Element('header', [''])
 }
-function themeHandler(event){
+function themeHandler(event) {
   localStorage.setItem('theme', event.target.value)
 }
 
-function previewButton(event){
-  document.getElementById('preview-frame').src +='';
+function previewButton(event) {
+  document.getElementById('preview-frame').src += '';
   // https://stackoverflow.com/questions/86428/what-s-the-best-way-to-reload-refresh-an-iframe
 }
 table.addEventListener('click', listCLickHandler);
-optionTwoDiv.style.visibility = "hidden"
-optionThreeDiv.style.visibility = "hidden"
+optionOneDiv.style.visibility = 'hidden'
+optionTwoDiv.style.visibility = 'hidden'
+optionThreeDiv.style.visibility = 'hidden'
 displayList();
 document.getElementsByTagName('select')[1].addEventListener('click', themeHandler);
 document.getElementById('preview').addEventListener('click', previewButton);
 
-function saveTitle(event){
-  Element.list[0].options[0]=event.target.value;
+function saveTitle(event) {
+  Element.list[0].options[0] = event.target.value;
   Element.store();
 }
-function saveHeader(event){
-  Element.list[1].options[0]=event.target.value;
+function saveHeader(event) {
+  Element.list[1].options[0] = event.target.value;
   Element.store();
 }
