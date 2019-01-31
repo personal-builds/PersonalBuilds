@@ -30,6 +30,7 @@
         <legend>Website Input</legend>
         <label for="type">Select Element</label>
         <select name="type">
+          <option value="">Choose an Element</option>
           <option value="img-one">one image</option>
           <option value="img-two">two image</option>
           <option value="img-three">three image</option>
@@ -38,41 +39,41 @@
           <option value="article-left">left article right image</option>
         </select>
         <div id="option-one-div">
-          <label for="option-one">first image</label>
+          <label id="option-one-label" for="option-one"></label>
           <input id="option-one" type="url" name="option-one">
         </div>
         <div id="option-two-div">
-          <label for="option-two">two image</label>
+          <label id="option-two-label" for="option-two"></label>
           <input id="option-two" type="url" name="option-two">
         </div>
         <div id="option-three-div">
-          <label for="option-three">three image</label>
+          <label id= "option-three-label" for="option-three"></label>
           <input id="option-three" type="url" name="option-three">
         </div>
 
 
         <button type="submit">Save</buttom>
-          
+
 
       </fieldset>
     </form>
-    
+
     <table>
     </table>
-     <section>
-       <label>preview themes:</label>
-    <select>
-      
-      <option value= "plain">plain</option>
-      <option value= "light">light</option>
-      <option value= "dark">dark</option>
-      
-    </select>
-    
-    <button id="preview"> preview</button>
-  </section>
+    <section>
+      <label>preview themes:</label>
+      <select>
+
+        <option value="plain">plain</option>
+        <option value="light">light</option>
+        <option value="dark">dark</option>
+
+      </select>
+
+      <button id="preview"> preview</button>
+    </section>
     <iframe id="preview-frame" src="preview.html" frameborder="0"></iframe>
-  
+
   </main>
 
   <footer>
