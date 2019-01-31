@@ -87,11 +87,11 @@ function renderArticleLeft(options) {
   article.className = 'article-left'; 
   var image = document.createElement('img');
   var text = document.createElement('p');
-  img.src = options[0];
+  image.src = options[0];
   text.textContent = options [1]
   article.appendChild(text);
   article.appendChild(image);
-  htmlbody.appendChild(article);
+  htmlBody.appendChild(article);
 }
 
 function renderTextElement(options){
