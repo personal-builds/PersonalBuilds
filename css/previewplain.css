@@ -1,6 +1,7 @@
 body {
     width: 960px;
     margin: 0 auto;
+    background-color: white;
   }
   
   h1 {
@@ -52,3 +53,6 @@ body {
     height: 400px;
     overflow-y: scroll;
   }
+  .img-two li {
+    display: inline-block
+    }
