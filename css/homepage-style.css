@@ -68,7 +68,7 @@ main ol li{
 button a{
     text-decoration: none;
 }
-button{
+.button {
     height: 60px;
     width:120px;
     border: 5px solid Black;
@@ -80,10 +80,35 @@ button{
     transition: 300ms;
     cursor: pointer;
     margin-left:845px;
-}
-button:hover{
+  }
+  button:hover{
     border: 10px solid white;
     background: linear-gradient(to bottom left, lime, rgb(46, 155, 189));
     color: #8a2530;
     font-weight: bold;
-}
+} 
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
