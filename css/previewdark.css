@@ -59,6 +59,28 @@ body {
      height: 400px;
      overflow-y: scroll;
    }
+   .article-left {
+    height: 400px;
+    width: 100%;
+   }
+   .article-left img{
+    width: 480px;
+     height: 400px;
+     display: inline-block;
+   }
+   article-left p{
+    display: inline-block;
+    width: 480px;
+    height: 400px;
+    overflow-y: scroll;
+
+   }
    .img-two li {
     display: inline-block
+    }
+    p{
+        
+        overflow-wrap: break-word;
+        background-color:black;
+        color:white;
     }
