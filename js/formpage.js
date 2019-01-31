@@ -62,7 +62,7 @@ function submitHandler(event) {
     case ('article-left'):
       new Element('article-left', [optionOne.value, optionTwo.value]);
       break;
-      
+
     case ('article-right'):
       new Element('article-right', [optionOne.value, optionTwo.value]);
       break;
@@ -353,6 +353,7 @@ function urlOptionHandler(event) {
 }
 
 // When the theme is added, it stores the new one from the dropdown's value
+// The css file for the theme is css/preview<input>.css
 
 function themeHandler(event) {
   localStorage.setItem('theme', event.target.value)
