@@ -106,5 +106,6 @@ body header h1{
 #adityaSection{
    width: 200px;
    padding: 40px;
+   display: flex;
 
 }
