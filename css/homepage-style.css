@@ -21,7 +21,7 @@ nav a {
     text-decoration: none;
     margin-left: 7%;
     margin-right: 4%;
-    color: black;
+    color: white;
     
     
 } 
@@ -47,15 +47,15 @@ body main {
     background-color: #F7EECD;
     font-size: 24px;
     background: linear-gradient(to right, rgb(5, 5, 190), rgb(139, 17, 139));
-    color:rgb(192, 176, 176);
+    color:white;
 }
 
 body main p{
+    color:white;
     line-height: 35px;
     margin:auto;
     width: 720px;
     text-indent: 16px;
-    font-family: Comic Sans MS, cursive, sans-serif;
 }
 main ol li{
     
