@@ -21,7 +21,7 @@ var optionTwoSelect = document.getElementById('option-two-select');
 var optionThreeSelect = document.getElementById('option-three-select');
 
 
-
+// class for website sections, all current elements are stored in Element.list to reduce global clutter
 
 function Element(type, options) {
   this.type = type;
@@ -29,12 +29,7 @@ function Element(type, options) {
   Element.list.push(this);
 }
 
-// retrieve website data, if it exists
-if (localStorage.getItem('website')) {
-  Element.list = JSON.parse(localStorage.getItem('website'));
-} else {
-  Element.list = [];
-}
+// stores contents of Element.list to local storage
 
 Element.store = function () {
   localStorage.setItem('website', JSON.stringify(Element.list));
@@ -44,83 +39,94 @@ Element.store = function () {
 
 
 
-
+// takes input from the form and makes a new Element, which is automatically appended to the list of elements
 function submitHandler(event) {
   event.preventDefault();
   switch (event.target.type.value) {
     case ('img-one'):
-      new Element('img-one', [optionOne.value])
-      break
+      new Element('img-one', [optionOne.value]);
+      break;
+
     case ('img-two'):
-      new Element('img-two', [optionOne.value, optionTwo.value])
-      break
+      new Element('img-two', [optionOne.value, optionTwo.value]);
+      break;
+
     case ('img-three'):
-      new Element('img-three', [optionOne.value, optionTwo.value, optionThree.value])
-      break
+      new Element('img-three', [optionOne.value, optionTwo.value, optionThree.value]);
+      break;
+
     case ('text'):
-      new Element('text', [optionOne.value])
-      break
+      new Element('text', [optionOne.value]);
+      break;
+
     case ('article-left'):
-      new Element('article-left', [optionOne.value, optionTwo.value])
-      break
+      new Element('article-left', [optionOne.value, optionTwo.value]);
+      break;
+
     case ('article-right'):
-      new Element('article-right', [optionOne.value, optionTwo.value])
-      break
+      new Element('article-right', [optionOne.value, optionTwo.value]);
+      break;
   }
-
-  // reset the storage
-  // Element.list = [];
-
-  // new Element('title', [titleInput.value]);
-  // new Element('header', [headerInput.value]);
-  // new Element('img-one', [imageOne.value]);
-  // new Element('img-three', [imageTwo.value, imageThree.value, imageFour.value])
-  // new Element('article-right', [imageFive.value, articleText.value])
-
   Element.store();
   displayList();
 }
+
+// helper function for listClickHandler, takes the id of a button from the list of elements and gives the index from the end of it
 
 function buttonNumber(id) {
   var output = id.slice(7, id.length);
   return parseInt(output);
 }
 
+// handles clicks on the list of elements, to delete or reorder elements
+
 function listCLickHandler(event) {
+
+  //if the click wasn't on a button, we're done here
   if (event.target.type !== 'submit') {
-    return
+    return;
   }
+
+  //if an X was clicked, delete the element at the appropriate index
   if (event.target.className === 'xButton') {
     var index = buttonNumber(event.target.id);
-    Element.list.splice(index, 1)
-    displayList()
+    Element.list.splice(index, 1);
+    displayList();
     Element.store();
-    return
+    return;
   }
+
+  //if an up was clicked, swap the element with its previous neighbor
   if (event.target.className === 'uButton') {
 
     var index = buttonNumber(event.target.id);
-    var swap = Element.list[index]
+    var swap = Element.list[index];
     Element.list[index] = Element.list[index - 1];
     Element.list[index - 1] = swap;
-    displayList()
+    displayList();
     Element.store();
-    return
+    return;
   }
+
+  //if a down was clicked, swap the element with its next neighbor
   if (event.target.className === 'dButton') {
 
     var index = buttonNumber(event.target.id);
-    var swap = Element.list[index]
+    var swap = Element.list[index];
     Element.list[index] = Element.list[index + 1];
     Element.list[index + 1] = swap;
-    displayList()
+    displayList();
     Element.store();
-    return
+    return;
   }
 }
 
 
-document.getElementsByTagName('form')[0].addEventListener("submit", submitHandler);
+// sets which options are visible, based on what type of element is selected
+// if the element needs an option, make that option's div visible
+// change the text of the option's label to indicate what it needs
+// if it's a URL, show the URL select and disable input box typing
+// if it's not a URL, make sure the input box is enabled for typing
 
 function elementSelect(event) {
   switch (event.target.value) {
@@ -128,85 +134,124 @@ function elementSelect(event) {
       optionOneDiv.style.visibility = "visible";
       optionOneSelect.style.visibility = 'visible';
       optionOne.disabled = true;
+
       optionTwoDiv.style.visibility = "hidden";
+
       optionThreeDiv.style.visibility = "hidden";
+
       optionOne.type = 'url';
+
       optionOneLabel.textContent = 'Image URL';
+
       break;
+
     case "img-two":
       optionOneDiv.style.visibility = "visible";
       optionOneSelect.style.visibility = 'visible';
       optionOne.disabled = true;
+
       optionTwoDiv.style.visibility = "visible";
       optionTwoSelect.style.visibility = 'visible';
       optionTwo.disabled = true;
+
       optionThreeDiv.style.visibility = "hidden";
+
       optionTwo.type = 'url';
       optionOne.type = 'url';
+
       optionOneLabel.textContent = 'Image URL:';
       optionTwoLabel.textContent = 'Image URL:';
-      break
+
+      break;
+
     case "img-three":
       optionOneDiv.style.visibility = "visible";
       optionOneSelect.style.visibility = 'visible';
       optionOne.disabled = true;
+
       optionTwoDiv.style.visibility = "visible";
       optionTwoSelect.style.visibility = 'visible';
       optionTwo.disabled = true;
+
       optionThreeDiv.style.visibility = "visible";
       optionThreeSelect.style.visibility = 'visible';
       optionThree.disabled = true;
+
       optionOne.type = 'url';
       optionTwo.type = 'url';
       optionThree.type = 'url';
+
       optionOneLabel.textContent = 'Image URL:';
       optionTwoLabel.textContent = 'Image URL:';
       optionThreeLabel.textContent = 'Image URL:';
-      break
+
+      break;
+
     case "text":
       optionOneDiv.style.visibility = "visible";
       optionOneSelect.style.visibility = 'hidden';
       optionOne.disabled = false;
+
       optionTwoDiv.style.visibility = "hidden";
+
       optionThreeDiv.style.visibility = "hidden";
+
       optionOne.type = 'text';
-      optionOneLabel.textContent =  'Text Content:'
+
+      optionOneLabel.textContent =  'Text Content:';
+
       break;
+
     case "article-right":
       optionOneDiv.style.visibility = "visible";
       optionOneSelect.style.visibility = 'visible';
       optionOne.disabled = true;
+
       optionTwoDiv.style.visibility = "visible";
       optionTwoSelect.style.visibility = 'hidden';
       optionTwo.disabled = false;
+      
       optionThreeDiv.style.visibility = "hidden";
+
       optionOne.type = 'url';
       optionTwo.type = 'text';
+
       optionOneLabel.textContent = 'Image URL:';
+
       optionTwoLabel.textContent = 'Article Text:';
+
       break;
+
     case "article-left":
       optionOneDiv.style.visibility = "visible";
       optionOneSelect.style.visibility = 'hidden';
       optionOne.disabled = false;
+      
       optionTwoDiv.style.visibility = "visible";
-      optionTwo.disabled = true;
       optionTwoSelect.style.visibility = 'visible';
+      optionTwo.disabled = true;
+
       optionThreeDiv.style.visibility = "hidden";
+
       optionOne.type = 'text';
       optionTwo.type = 'url';
+
       optionOneLabel.textContent = 'Article Text:';
       optionTwoLabel.textContent = 'Image URL:';
+
       break;
+
     case '':
       optionOneDiv.style.visibility = "hidden";
       optionTwoDiv.style.visibility = "hidden";
       optionThreeDiv.style.visibility = "hidden"; 
-      break
+      break;
   }
 }
-document.getElementsByTagName('select')[0].addEventListener('click', elementSelect);
 
+
+
+// builds the table showing the elements currently in the site, and their values
 
 function displayList() {
   table.innerHTML = '';
@@ -286,6 +331,8 @@ function displayList() {
 
 }
 
+// handles the url dropdowns, putting the appropriate URL in the box, or enabling it to be edited, as appropriate
+
 function urlOptionHandler(event) {
   // The name of the input field is the same as the select, minus '-select', this takes the extra off
   var inputName = event.target.id.slice(0, -7);
@@ -305,6 +352,36 @@ function urlOptionHandler(event) {
   }
 }
 
+// When the theme is added, it stores the new one from the dropdown's value
+// The css file for the theme is css/preview<input>.css
+
+function themeHandler(event) {
+  localStorage.setItem('theme', event.target.value)
+}
+
+//forces a render of the preview iframe
+
+function previewButton(event) {
+  document.getElementById('preview-frame').src += '';
+  // https://stackoverflow.com/questions/86428/what-s-the-best-way-to-reload-refresh-an-iframe
+}
+
+// saves the value of the page title when it is changed
+
+function saveTitle(event) {
+  Element.list[0].options[0] = event.target.value;
+  Element.store();
+}
+
+// saves the value of the header text when it is changed
+
+function saveHeader(event) {
+  Element.list[1].options[0] = event.target.value;
+  Element.store();
+}
+
+// Pulls built website from local storage if it exists, or initializes a new one if it doesn't
+
 if (localStorage.getItem('website')) {
   Element.list = JSON.parse(localStorage.getItem('website'))
 } else {
@@ -312,31 +389,18 @@ if (localStorage.getItem('website')) {
   new Element('title', [''])
   new Element('header', [''])
 }
-function themeHandler(event) {
-  localStorage.setItem('theme', event.target.value)
-}
 
-function previewButton(event) {
-  document.getElementById('preview-frame').src += '';
-  // https://stackoverflow.com/questions/86428/what-s-the-best-way-to-reload-refresh-an-iframe
-}
 table.addEventListener('click', listCLickHandler);
 optionOneDiv.style.visibility = 'hidden'
 optionTwoDiv.style.visibility = 'hidden'
 optionThreeDiv.style.visibility = 'hidden'
-displayList();
+
+document.getElementsByTagName('form')[0].addEventListener("submit", submitHandler);
+document.getElementsByTagName('select')[0].addEventListener('click', elementSelect);
 document.getElementById('preview-select').addEventListener('click', themeHandler);
 document.getElementById('preview').addEventListener('click', previewButton);
 document.getElementById('option-one-select').addEventListener('click', urlOptionHandler);
 document.getElementById('option-two-select').addEventListener('click', urlOptionHandler);
 document.getElementById('option-three-select').addEventListener('click', urlOptionHandler);
 
-
-function saveTitle(event) {
-  Element.list[0].options[0] = event.target.value;
-  Element.store();
-}
-function saveHeader(event) {
-  Element.list[1].options[0] = event.target.value;
-  Element.store();
-}
+displayList();

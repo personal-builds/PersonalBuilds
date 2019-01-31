@@ -1,9 +1,23 @@
+// This file renders the website the user has built
+
+
+// pulls website from storage
 var elements = JSON.parse(localStorage.getItem('website'));
+
+// gets the body tag, to add elements to it
 var htmlBody = document.getElementsByTagName('body')[0];
+
+// Adds the tab title
+// title options:
+// 0: title text
 
 function renderTitle(options) {
   document.title = options[0];
 }
+
+// Adds the website title in an h1
+// Header options:
+// 0: h1 text
 
 function renderHeader(options) {
   var header = document.createElement('header');
@@ -13,12 +27,50 @@ function renderHeader(options) {
   htmlBody.appendChild(header);
 }
 
+// An element that consists of a single, full-width image
+// img-one options:
+// 0: image URL
+
 function renderImgOne(options) {
   var image = document.createElement('img');
   image.className = 'img-one';
   image.src = options[0];
   htmlBody.appendChild(image);
 }
+
+// An element consisting of two images side-by-side
+// img-two options:
+// 0: left image URL
+// 1: right image URL
+
+function renderImgTwo(options) {
+  var imageUl = document.createElement('ul');
+  imageUl.className = 'img-two';
+
+  var imgOneLi = document.createElement('li');
+  var imgOne = document.createElement('img');
+  imgOne.src = options[0];
+
+  var imgTwoLi = document.createElement('li');
+  var imgTwo = document.createElement('img');
+  imgTwo.src = options[1];
+  
+  imgOneLi.appendChild(imgOne);
+  imgTwoLi.appendChild(imgTwo);
+
+
+  imageUl.appendChild(imgOneLi);
+  imageUl.appendChild(imgTwoLi);
+  
+
+  htmlBody.appendChild(imageUl);
+}
+
+// An element consisting of three images side-by-side
+// img-three options:
+// 0: left image URL
+// 1: center image URL
+// 2: right image URL
 
 function renderImgThree(options) {
   var imageUl = document.createElement('ul');
@@ -47,28 +99,10 @@ function renderImgThree(options) {
   htmlBody.appendChild(imageUl);
 }
 
-function renderImgTwo(options) {
-  var imageUl = document.createElement('ul');
-  imageUl.className = 'img-two';
-
-  var imgOneLi = document.createElement('li');
-  var imgOne = document.createElement('img');
-  imgOne.src = options[0];
-
-  var imgTwoLi = document.createElement('li');
-  var imgTwo = document.createElement('img');
-  imgTwo.src = options[1];
-  
-  imgOneLi.appendChild(imgOne);
-  imgTwoLi.appendChild(imgTwo);
-
-
-  imageUl.appendChild(imgOneLi);
-  imageUl.appendChild(imgTwoLi);
-  
-
-  htmlBody.appendChild(imageUl);
-}
+// An element consisting of an image on the left and an article with a scrollbar on the right
+// article-right options:
+// 0: image URL
+// 1: article text
 
 function renderArticleRight(options) {
   var article = document.createElement('section');
@@ -82,6 +116,11 @@ function renderArticleRight(options) {
   htmlBody.appendChild(article);
 }
 
+// An element consisting of an article with a srollbar on the left, and an image on the right
+// article-left options:
+// 0: article text
+// 1: image URL
+
 function renderArticleLeft(options) {
   var article = document.createElement('section');
   article.className = 'article-left'; 
@@ -93,6 +132,10 @@ function renderArticleLeft(options) {
   article.appendChild(image);
   htmlBody.appendChild(article);
 }
+
+// An element consisting of a paragraph of text
+// text options:
+// 0: paragraph text
 
 function renderTextElement(options){
  
@@ -107,7 +150,7 @@ function renderTextElement(options){
 
 
 
-
+// iterates throught the elements, passing each element's options to the appropriate function
 
 for(var i=0; i<elements.length; i++) {
   switch(elements[i].type) {
@@ -137,6 +180,9 @@ for(var i=0; i<elements.length; i++) {
         break;
   }
 }
+
+// creates a link object and appends it to the document head, to add 
+// a stylesheet as chosen by the user
 
 var csshref = `css/preview${localStorage.getItem('theme')}.css`
 var head = document.getElementsByTagName('head')[0];

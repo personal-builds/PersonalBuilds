@@ -1,9 +1,18 @@
 "use strict";
 
+// this file builds the HTML to show on the output page
+// The HTML is for the user to copy to make their website
+
+// pull the list of elements from storage
+
 var elements = JSON.parse(localStorage.getItem('website'));
+// global variable that hold the html as it is built
 var html;
 
+// iterates through the list of elements, feeding the options of each element to the appropriate function
+
 function buildHTML() {
+  //initialize html
   html = "";
 
   for(var i=0; i<elements.length; i++) {
@@ -41,6 +50,7 @@ function buildHTML() {
 }
 
 
+// Builds title and document head
 // Title options:
 // 0: title text
 
@@ -71,11 +81,20 @@ function buildHeader(options) {
       `;
 }
 
+// An element that consists of a single, full-width image
 // img-one options:
+// 0: image URL
+
 function buildImageOne(options) {
   html += `<img src="${options[0]}" class="img-one"
   `;
 }
+
+// An element consisting of two images side-by-side
+// img-two options:
+// 0: left image URL
+// 1: right image URL
+
 function buildImageTwo(options) {
   html += `<ul class="img-two">
       <li><img src = "${options[0]}"></li>
@@ -83,6 +102,12 @@ function buildImageTwo(options) {
       </ul>
       `
       }
+
+// An element consisting of three images side-by-side
+// img-three options:
+// 0: left image URL
+// 1: center image URL
+// 2: right image URL
 
 function buildImageThree(options) {
   html += `<ul class="img-three">
@@ -93,24 +118,40 @@ function buildImageThree(options) {
     `
 }
 
+// An element consisting of an image on the left and an article with a scrollbar on the right
+// article-right options:
+// 0: image URL
+// 1: article text
+
 function buildArticleRight(options) {
   html += `<section id="article-right">
       <img src="${options[0]}" />
       <p>${options[2]}</p>
     </section>
-    `
-}
+    `}
+
+// An element consisting of an article with a srollbar on the left, and an image on the right
+// article-left options:
+// 0: article text
+// 1: image URL
+
 function buildArticleLeft(options) {
   html += `<section id="article-left">
       <p>${options[2]}</p>
       <img src="${options[0]}" />
       
     </section>
-    `
-}
+    `}
+
+// An element consisting of a paragraph of text
+// text options:
+// 0: paragraph text
+
 function buildText(options) {
   html += `<p class ="text">${options[0]}</p>`
 }
+
+// builds the HTML for the end of the HTML file
 
 function buildEnd(options) {
   html += `</main>
