@@ -136,8 +136,10 @@ function elementSelect(event) {
       optionOne.disabled = true;
 
       optionTwoDiv.style.visibility = "hidden";
+      optionTwoSelect.style.visibility = 'hidden';
 
       optionThreeDiv.style.visibility = "hidden";
+      optionThreeSelect.style.visibility = 'hidden';
 
       optionOne.type = 'url';
 
@@ -155,6 +157,7 @@ function elementSelect(event) {
       optionTwo.disabled = true;
 
       optionThreeDiv.style.visibility = "hidden";
+      optionThreeSelect.style.visibility = 'hidden';
 
       optionTwo.type = 'url';
       optionOne.type = 'url';
@@ -193,8 +196,10 @@ function elementSelect(event) {
       optionOne.disabled = false;
 
       optionTwoDiv.style.visibility = "hidden";
+      optionTwoSelect.style.visibility = 'hidden';
 
       optionThreeDiv.style.visibility = "hidden";
+      optionThreeSelect.style.visibility = 'hidden';
 
       optionOne.type = 'text';
 
@@ -212,6 +217,7 @@ function elementSelect(event) {
       optionTwo.disabled = false;
       
       optionThreeDiv.style.visibility = "hidden";
+      optionThreeSelect.style.visibility = 'hidden';
 
       optionOne.type = 'url';
       optionTwo.type = 'text';
@@ -232,6 +238,7 @@ function elementSelect(event) {
       optionTwo.disabled = true;
 
       optionThreeDiv.style.visibility = "hidden";
+      optionThreeSelect.style.visibility = 'hidden';
 
       optionOne.type = 'text';
       optionTwo.type = 'url';
