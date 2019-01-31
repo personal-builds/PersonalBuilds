@@ -1,12 +1,9 @@
 body {
-   width: 960px;
+    width: 960px;
     margin: 0 auto;
     background-color: white;
   }
-  header{
-    border: 3px solid black;
-    background-color: #666;
-  }
+  
   h1 {
     text-align: center;
     font-size: 7rem;
@@ -41,7 +38,6 @@ body {
   }
   
   .article-right {
-    height: 400px;
     width: 100%;
   }
   
