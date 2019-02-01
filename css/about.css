@@ -59,7 +59,6 @@ body main p{
     margin:auto;
     width: 720px;
     text-indent: 16px;
-    font-family: Comic Sans MS, cursive, sans-serif;
 }
 button a{
     text-decoration: none;
@@ -93,7 +92,7 @@ body header h1{
     text-shadow: 6px 6px white;
 }
 #tannerSection{
-
+    display:flex;
     margin-top: 40px;
     padding: 40px;
     width: 300px;
