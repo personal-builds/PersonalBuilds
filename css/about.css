@@ -10,7 +10,7 @@ body header{
 
 
 #tannersPic{
-    transform: rotate(90deg);
+   
     width: 350px;
     margin-bottom: 40px;
 }
@@ -55,11 +55,11 @@ body main {
 }
 
 body main p{
+    font-family: 'Times New Roman', Times, serif;
     line-height: 35px;
     margin:auto;
     width: 720px;
     text-indent: 16px;
-    font-family: Comic Sans MS, cursive, sans-serif;
 }
 button a{
     text-decoration: none;
@@ -93,10 +93,10 @@ body header h1{
     text-shadow: 6px 6px white;
 }
 #tannerSection{
-
     margin-top: 40px;
     padding: 40px;
     width: 300px;
+    display:flex;
 }
 
 #adiPic{
