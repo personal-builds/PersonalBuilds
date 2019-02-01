@@ -41,6 +41,7 @@ body {
    .img-three img {
      width: 300px;
      height: 375px;
+     margin-left: 10px;
    }
    
    .article-right {
@@ -101,7 +102,6 @@ body {
   }
     p{
         
-<<<<<<< HEAD
         overflow-wrap: break-word;
         background-color: #6f58c9;
         color:white;
@@ -113,9 +113,4 @@ body {
     body > p {
       margin: 10px 0px 20px 0;
       border: 2px solid #7f68d9;
-=======
-    overflow-wrap: break-word;
-    background-color: #6f58c9;
-    color:white;
->>>>>>> 2fa49e8f3b0d9f318458e3385d85f2126917f2be
     }
