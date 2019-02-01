@@ -55,6 +55,7 @@ body main {
 }
 
 body main p{
+    font-family: 'Times New Roman', Times, serif;
     line-height: 35px;
     margin:auto;
     width: 720px;
