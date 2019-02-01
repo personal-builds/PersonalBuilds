@@ -79,20 +79,21 @@ button a{
     font-size: 20px;
     transition: 300ms;
     cursor: pointer;
-    margin-left:845px;
+    margin-left: 845px;
   }
   button:hover{
     border: 10px solid white;
     background: linear-gradient(to bottom left, lime, rgb(46, 155, 189));
-    color: #8a2530;
+    color: #2a5175;
     font-weight: bold;
+    
 } 
   
   .button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
-    transition: 0.5s;
+    transition: 300ms;
   }
   
   .button span:after {
@@ -101,7 +102,7 @@ button a{
     opacity: 0;
     top: 0;
     right: -20px;
-    transition: 0.5s;
+    transition: 300ms;
   }
   
   .button:hover span {
