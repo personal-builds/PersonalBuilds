@@ -92,10 +92,10 @@ body header h1{
     text-shadow: 6px 6px white;
 }
 #tannerSection{
-    display:flex;
     margin-top: 40px;
     padding: 40px;
     width: 300px;
+    display:flex;
 }
 
 #adiPic{
