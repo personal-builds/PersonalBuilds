@@ -108,6 +108,11 @@ body header h1{
    padding: 40px;
    display: flex;
 }
+#dana-section {
+  width: 250px;
+  padding: 40px;
+  display: flex;
+}
 #dana-pic {
   width: 250px;
 }
