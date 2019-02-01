@@ -38,6 +38,7 @@ body {
   .img-three img {
     width: 300px;
     height: 375px;
+    margin-left: 10px;
   }
   
   .article-right {
@@ -96,9 +97,9 @@ body {
     margin-right: 20px;
     width: 460px;
     height: 350px;
-    };
+    }
 
-   }
+   
    .img-two img {
     width: 460px;
     height: 350px;

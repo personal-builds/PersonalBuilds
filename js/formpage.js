@@ -348,7 +348,7 @@ function urlOptionHandler(event) {
   switch(event.target.value) {
     case 'placeholder':
       inputBox.disabled = true;
-      inputBox.value = 'https://via.placeholder.com/300x300?text=Placeholder'
+      inputBox.value = 'https://via.placeholder.com/300x300?text=+'
       break;
     case 'thing':
       inputBox.disabled = true;
