@@ -75,6 +75,7 @@ button a{
     padding: 10px, 40px;
     background: linear-gradient(to bottom right, lime, rgb(46, 155, 189));
     color: #2a5175;
+    font-weight: bold;
     border-radius: 30px;
     font-size: 20px;
     transition: 300ms;
