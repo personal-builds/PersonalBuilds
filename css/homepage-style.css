@@ -21,7 +21,7 @@ nav a {
     text-decoration: none;
     margin-left: 7%;
     margin-right: 4%;
-    color: black;
+    color: white;
     
     
 } 
@@ -47,15 +47,15 @@ body main {
     background-color: #F7EECD;
     font-size: 24px;
     background: linear-gradient(to right, rgb(5, 5, 190), rgb(139, 17, 139));
-    color:rgb(192, 176, 176);
+    color:white;
 }
 
 body main p{
+    color:white;
     line-height: 35px;
     margin:auto;
     width: 720px;
     text-indent: 16px;
-    font-family: Comic Sans MS, cursive, sans-serif;
 }
 main ol li{
     
@@ -75,24 +75,26 @@ button a{
     padding: 10px, 40px;
     background: linear-gradient(to bottom right, lime, rgb(46, 155, 189));
     color: #2a5175;
+    font-weight: bold;
     border-radius: 30px;
     font-size: 20px;
     transition: 300ms;
     cursor: pointer;
-    margin-left:845px;
+    margin-left: 845px;
   }
   button:hover{
     border: 10px solid white;
     background: linear-gradient(to bottom left, lime, rgb(46, 155, 189));
-    color: #8a2530;
+    color: #2a5175;
     font-weight: bold;
+    
 } 
   
   .button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
-    transition: 0.5s;
+    transition: 300ms;
   }
   
   .button span:after {
@@ -101,7 +103,7 @@ button a{
     opacity: 0;
     top: 0;
     right: -20px;
-    transition: 0.5s;
+    transition: 300ms;
   }
   
   .button:hover span {
@@ -112,3 +114,8 @@ button a{
     opacity: 1;
     right: 0;
   }
+  body header img{
+    width: 120px;
+    height:60px;
+    border-radius: 20px;
+}

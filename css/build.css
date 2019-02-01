@@ -11,7 +11,7 @@ header{
     margin:auto;
     width:960px;
     background: linear-gradient(to right, red,  orange, indigo, violet);
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 40px;
     
 }
@@ -19,7 +19,7 @@ nav a {
     text-decoration: none;
     margin-left: 7%;
     margin-right: 4%;
-    color: black;
+    color: white;
     font-family: Stencil std, fantasy;
 } 
 
@@ -78,6 +78,7 @@ form select {
     color: black;
     font-size: 18px;
     background-color: #f7eecd;
+    
   
 }
 form label{
@@ -145,5 +146,10 @@ section{
     border: 20px solid black;
     float: left;
     height: 80px;
+    border-radius: 20px;
+}
+body header nav img{
+    width: 120px;
+    height:60px;
     border-radius: 20px;
 }
